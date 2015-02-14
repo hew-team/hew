@@ -7,11 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>login</h1>
-	<form action="UserServlet" method="post">
-		<input type="text" name="userId">
-		<input type="password" name="passwd">
-		<input type="submit" name="login">
+
+	<form method="POST" enctype="multipart/form-data" 
+	        action="Upload">
+	ファイルパス：
+		<input type="file" name="fl" size="75" />
+		<input type="submit" value="アップロード" />
 	</form>
 </body>
 </html>
