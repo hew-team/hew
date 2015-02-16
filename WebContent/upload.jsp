@@ -1,18 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
-	<form method="POST" enctype="multipart/form-data" 
-	        action="Upload">
-	ファイルパス：
-		<input type="file" name="fl" size="75" />
-		<input type="submit" value="アップロード" />
+	<form method="post" enctype="multipart/form-data" action="UploadFileServlet">
+		<label>商品名：<input type="text" name="name"></label><br>
+		<label>商品説明：<br>
+		<textarea rows="4" cols="40" placeholder="商品説明をご記入下さい" name="description"></textarea></label><br>
+		<label>ファイル：<input type="file" name="filename" size="30"></label><br>
+		<input type="submit" value="送信" name="upload">
 	</form>
 </body>
 </html>

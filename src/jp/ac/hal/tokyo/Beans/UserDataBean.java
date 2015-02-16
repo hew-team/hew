@@ -1,5 +1,6 @@
 package jp.ac.hal.tokyo.Beans;
 
+
 public class UserDataBean {
 	
 	//プロパティ
@@ -32,7 +33,9 @@ public class UserDataBean {
 			ret = -1;
 		}
 		//入力チェックが正常ならばプロパティを設定
-		if(ret == 0) this.user = user;
+		if(ret == 0){
+			this.user = user;
+		}
 		
 		return ret;
 	}

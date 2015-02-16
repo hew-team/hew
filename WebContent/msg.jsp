@@ -14,7 +14,7 @@
 		String msg = "";
 	
 		try{
-			err = (Boolean)request.getAttribute("err");
+			//err = (Boolean)request.getAttribute("err");
 			msg = (String)request.getAttribute("msg");
 			
 			out.print("<h1>" + msg + "</h1>");

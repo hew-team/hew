@@ -122,5 +122,14 @@ public class DAO {
 			return ret;
 		}
 	}
+	
+	public int uploadFile(ProductDataBean pdb){
+		String sql = "insert into value t_product(product_id,user_id,)";
+	    System.out.println("商品名 = " + pdb.getProductName() 
+	    		+ " \n商品説明 = " + pdb.getProductText() 
+	    		+ " \nファイル名 = " + pdb.getProductFileName()
+	    		+ " \nサイズ = " + pdb.getProductSize());
+	    return 0;
+	}
 
 }
