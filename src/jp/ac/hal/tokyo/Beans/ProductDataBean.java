@@ -6,6 +6,7 @@ import java.util.Date;
 public class ProductDataBean {
 	
 	private String userId;
+	private String category;
 	private String productName;
 	private String productIcon;
 	private String productPoint;
@@ -19,11 +20,17 @@ public class ProductDataBean {
 	private Date stopFlagDate;
 	
 
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 	public String getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getProductName() {

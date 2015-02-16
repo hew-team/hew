@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<ul>
+		<li><a href="index.jsp">home</a></li>
+		<li><a href="upload.jsp">upload</a></li>
+	</ul>
+	<a href="signup.jsp">新規登録</a>
 	<h1>login</h1>
 	<form action="UserServlet" method="post">
 		<input type="text" name="userId">

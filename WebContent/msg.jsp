@@ -7,6 +7,10 @@
 <title>msg</title>
 </head>
 <body>
+	<ul>
+		<li><a href="index.jsp">home</a></li>
+		<li><a href="upload.jsp">upload</a></li>
+	</ul>
 	<%
 		//エラーフラグ
 		boolean err = false;

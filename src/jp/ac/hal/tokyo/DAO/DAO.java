@@ -94,7 +94,7 @@ public class DAO {
 		int ret = 0;
 		
 		//プリペアードステートメントSQL
-		String sql = "select count(*) from t_user where user_id = ? and pass_word = ?;";
+		String sql = "select count(*) from t_user where l_user_id = ? and pass_word = ?;";
 		//コネクション作成
 		this.getConnection();
 		
@@ -125,10 +125,13 @@ public class DAO {
 	
 	public int uploadFile(ProductDataBean pdb){
 		String sql = "insert into value t_product(product_id,user_id,)";
-	    System.out.println("商品名 = " + pdb.getProductName() 
+	    System.out.println("ユーザID = " + pdb.getUserId()
+	    		+ " \n商品名 = " + pdb.getProductName() 
 	    		+ " \n商品説明 = " + pdb.getProductText() 
 	    		+ " \nファイル名 = " + pdb.getProductFileName()
-	    		+ " \nサイズ = " + pdb.getProductSize());
+	    		+ " \nサイズ = " + pdb.getProductSize()
+	    		+ " \nカテゴリ = " + pdb.getCategory()
+	    		+ " \nポイント = " + pdb.getProductPoint());
 	    return 0;
 	}
 
