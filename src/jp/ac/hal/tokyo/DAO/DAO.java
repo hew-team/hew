@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import jp.ac.hal.tokyo.Beans.*;
 
@@ -81,6 +83,74 @@ public class DAO {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
+	}
+	/**
+	 * DBに登録しようとしてるIDがすでにあるかチェック
+	 * @param id
+	 * @return
+	 */
+	public boolean checkId(String id){
+		String sql = "select count(*) from t_user where l_user_id = ?";
+		boolean flg = false;
+		this.getConnection();
+		
+		try{
+			ps = con.prepareStatement(sql);
+			ps.setString(1, id);
+			
+			rs = ps.executeQuery();
+			rs.next();
+			if(rs.getInt("count(*)") == 0){
+				flg = true;
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			this.close();
+		}
+		
+		return flg;
+	}
+	
+	/**
+	 * 新規ユーザー登録
+	 * @param audb
+	 * @return int (-1:異常 1:成功)
+	 */
+	public int addUserData(AddUserDataBean audb){
+		String sql = "insert into t_user(sex, register_date, l_user_id, pass_word, user_name, e_mail, birth) values(?,?,?,?,?,?,?)";
+		this.getConnection();
+		int ret = 0;
+		
+		//現在の日付を取得
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		try{
+			ps = con.prepareStatement(sql);
+			
+			ps.setString(1, audb.getSex());
+			ps.setString(2, sdf.format(date));
+			ps.setString(3, audb.getId());
+			ps.setString(4, audb.getPasswd());
+			ps.setString(5, audb.getName());
+			ps.setString(6, audb.getMail());
+			ps.setString(7, audb.getBirth());
+			
+			ret = ps.executeUpdate();
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+			ret = -1;
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			this.close();
+		}
+		return ret;
 	}
 	
 	/**
