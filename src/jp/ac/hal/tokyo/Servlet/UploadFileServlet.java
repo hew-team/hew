@@ -55,10 +55,11 @@ public class UploadFileServlet extends HttpServlet {
 		String fileName = "";
 		int ret = 0;
 		
+		
 		request.setCharacterEncoding("UTF-8");
 		HttpSession hs = request.getSession();
-		if(hs.getAttribute("userData") != null){
-			UserDataBean udb = (UserDataBean) hs.getAttribute("userData");
+		if(hs.getAttribute("userId") != null){
+			String userId = (String) hs.getAttribute("userId");
 			DAO dao = new DAO();
 			ProductDataBean pdb = new ProductDataBean();
 			
@@ -95,13 +96,13 @@ public class UploadFileServlet extends HttpServlet {
 						if((fileName != null) && (!fileName.equals(""))){
 							//(8)PATH名を除くファイル名のみを取得
 							fileName=(new File(fileName)).getName();
-							File file = new File(path + "/" + udb.getUser());
+							File file = new File(path + "/" + userId);
 							//ユーザ事のフォルダ作成
 							file.mkdir();
 							//ファイル書き込み
 							size = fItem.getSize();
 							//(9)ファイルデータを指定されたファイルに書き出し
-							fItem.write(new File(path + "/" + udb.getUser() + "/" +fileName));
+							fItem.write(new File(path + "/" + userId + "/" +fileName));
 						}
 						//フォームの内容を取得
 						}else if(fItem.isFormField()){
@@ -126,7 +127,7 @@ public class UploadFileServlet extends HttpServlet {
 			}
 			
 			try{
-				pdb.setUserId(udb.getUser());
+				pdb.setUserId(userId);
 				pdb.setProductName(name);
 				pdb.setProductText(desc);
 				pdb.setProductFileName(fileName);

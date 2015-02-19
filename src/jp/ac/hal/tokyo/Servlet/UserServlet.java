@@ -97,7 +97,7 @@ public class UserServlet extends HttpServlet {
 					fwPage = "msg.jsp";
 				}else{
 					//正常の場合
-					fwPage = "collect.jsp";
+					fwPage = "home.jsp";
 				}
 				
 				//転送

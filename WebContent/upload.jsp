@@ -16,6 +16,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/upload.js"></script>
 </head>
 <body>
 	ようこそ<%= id %>さん。<br>
@@ -25,38 +26,37 @@
 	</ul>
 	
 
-	<!-- <form method="post" enctype="multipart/form-data" > -->
-		<label>商品名：<input type="text" name="name"></label><br>
-		<label>商品説明：<br>
-		<textarea rows="4" cols="40" placeholder="商品説明をご記入下さい" name="description"></textarea></label><br>
-		<label>購入ポイント：<input type="text" name="point" id="point"></label><br>
-		<label for="select">カテゴリ：</label>
-		<select id="select" name="select">
-			<option>カテゴリ</option>
-			<option>ゲーム</option>
-			<option>ツール</option>
-			<option>ニュース</option>
-			<option>-----</option>
-			<option>-----</option>
-			<option>-----</option>
-		</select>
-		<br>
-		<div id="drag-area" style="width:400px;height:200px;border:dashed 1px #333;">
-			<p>アップロードするファイルをドロップ</p>
-		</div>
-		<div id="fileNameArea"></div>
-		<!-- <input type="submit" value="送信" name="upload"> -->
-		<button id="button" >送信</button>
-	<!-- </form> -->
+	<label>商品名：<input type="text" name="name"></label><br>
+	<label>商品説明：<br>
+	<textarea rows="4" cols="40" placeholder="商品説明をご記入下さい" name="description"></textarea></label><br>
+	<label>購入ポイント：<input type="text" name="point" id="point"></label><br>
+	<label for="select">カテゴリ：</label>
+	<select id="select" name="select">
+		<option>カテゴリ</option>
+		<option>ゲーム</option>
+		<option>ツール</option>
+		<option>ニュース</option>
+		<option>-----</option>
+		<option>-----</option>
+		<option>-----</option>
+	</select>
+	<br>
+	<div id="drag-area" style="width:400px;height:200px;border:dashed 1px #333;">
+		<p>アップロードするファイルをドロップ</p>
+	</div>
+	<div id="fileNameArea"></div>
+	<button id="button" >送信</button>
+	<input type="hidden" name="msg" value="送信しました。">
 	<script type="text/javascript">
 	$(function(){
 		var files = null;
 		$('document').ready(function(){
 			$('#button').click(function(e){
 				e.preventDefault();
-				checkPoint();
 				if(files && checkName() && checkDesc() && checkPoint() && checkCategory()){
 					uploadFiles(files);
+				}else{
+					alert('入力項目を確認して下さい');
 				}
 			});
 		});
