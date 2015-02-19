@@ -48,8 +48,6 @@ public class SignUpServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String passwd = request.getParameter("passwd");
 		String passwdRetype = request.getParameter("passwdRetype");
-		String question = request.getParameter("question");
-		String ans = request.getParameter("ans");
 		String year = request.getParameter("year");
 		String month = request.getParameter("month");
 		String day = request.getParameter("day");
@@ -106,18 +104,6 @@ public class SignUpServlet extends HttpServlet {
 		}else{
 			err = true;
 			msg += "パスワードが入力されていないか2つのパスワードが一致していません。\n";
-		}
-		if(question != null){
-			audb.setQuestion(question);
-		}else{
-			err = true;
-			msg += "秘密の質問が入力されていません";
-		}
-		if(ans != null && !ans.equals("")){
-			audb.setAns(ans);
-		}else{
-			err = true;
-			msg += "秘密の質問の答が入力されていません。";
 		}
 		
 		

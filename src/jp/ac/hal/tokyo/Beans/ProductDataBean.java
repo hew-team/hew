@@ -9,7 +9,7 @@ public class ProductDataBean {
 	private String category;
 	private String productName;
 	private String productIcon;
-	private String productPoint;
+	private int productPoint;
 	private ArrayList<String> productImage;
 	private String productText;
 	private String productSize;
@@ -45,10 +45,10 @@ public class ProductDataBean {
 	public void setProductIcon(String productIcon) {
 		this.productIcon = productIcon;
 	}
-	public String getProductPoint() {
+	public int getProductPoint() {
 		return productPoint;
 	}
-	public void setProductPoint(String productPoint) {
+	public void setProductPoint(int productPoint) {
 		this.productPoint = productPoint;
 	}
 	public ArrayList<String> getProductImage() {

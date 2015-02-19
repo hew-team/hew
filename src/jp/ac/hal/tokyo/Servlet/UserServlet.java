@@ -67,7 +67,7 @@ public class UserServlet extends HttpServlet {
 						if(ret == 1){
 							//ログインが成功の場合
 							//セッションにユーザー情報（userDataオブジェクト）を格納
-							session.setAttribute("userData", userData);
+							session.setAttribute("userId", userData.getUser());
 							
 						}else if(ret == 0){
 							//ログイン失敗の場合

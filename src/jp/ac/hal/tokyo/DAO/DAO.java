@@ -193,16 +193,53 @@ public class DAO {
 		}
 	}
 	
+	/**
+	 * 商品登録
+	 * @param pdb
+	 * @return int (-1:異常 1:成功)
+	 */
 	public int uploadFile(ProductDataBean pdb){
-		String sql = "insert into value t_product(product_id,user_id,)";
-	    System.out.println("ユーザID = " + pdb.getUserId()
+		String sql = "insert into t_product(user_id, category_id, product_name, product_point, product_text, product_size, product_file, upload_date) values((select user_id from t_user where l_user_id = ?),?,?,?,?,?,?,?);";
+		int ret = 0;
+		this.getConnection();
+
+		System.out.println("ユーザID = " + pdb.getUserId()
 	    		+ " \n商品名 = " + pdb.getProductName() 
 	    		+ " \n商品説明 = " + pdb.getProductText() 
 	    		+ " \nファイル名 = " + pdb.getProductFileName()
 	    		+ " \nサイズ = " + pdb.getProductSize()
 	    		+ " \nカテゴリ = " + pdb.getCategory()
 	    		+ " \nポイント = " + pdb.getProductPoint());
-	    return 0;
+		
+		//現在の日付を取得
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		try{
+			ps = con.prepareStatement(sql);
+			
+			ps.setString(1, pdb.getUserId());
+			ps.setString(2, null);//カテゴリーID
+			ps.setString(3, pdb.getProductName());
+			ps.setInt(4, pdb.getProductPoint());
+			ps.setString(5, pdb.getProductText());
+			ps.setString(6, pdb.getProductSize());
+			ps.setString(7, pdb.getProductFileName());
+			ps.setString(8, sdf.format(date));
+			
+			ret = ps.executeUpdate();
+			
+		}catch(SQLException e){
+			ret = -1;
+			e.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			this.close();
+		}
+		
+
+		return ret;
 	}
 
 }

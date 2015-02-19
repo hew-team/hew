@@ -18,5 +18,10 @@
 		<input type="password" name="passwd">
 		<input type="submit" name="login">
 	</form>
+	<br><br>
+	
+	<form action="UserServlet" method="post">
+		<input type="submit" name="logout" value="logout">
+	</form>
 </body>
 </html>

@@ -40,11 +40,6 @@
 		<label>ログインID：<input type="text" name="id"></label><div id="idMsg"></div><br>
 		<label>パスワード：<input type="password" name="passwd"></label><br>
 		<label>パスワード(再入力)：<input type="password" name="passwdRetype"></label><div id="passMsg"></div><br>
-		<label for="question">秘密の質問</label>
-		<select id="question" name="question">
-			<option>-----</option>
-		</select><br>
-		<label>秘密の質問の答え：<input type="text" name="ans"></label>
 		<div>
 			利用規約・・・・・
 		</div><br>

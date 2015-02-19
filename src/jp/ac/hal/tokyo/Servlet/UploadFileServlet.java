@@ -53,6 +53,7 @@ public class UploadFileServlet extends HttpServlet {
 		String path = "/upload";
 		String msg = "";
 		String fileName = "";
+		int ret = 0;
 		
 		request.setCharacterEncoding("UTF-8");
 		HttpSession hs = request.getSession();
@@ -86,6 +87,7 @@ public class UploadFileServlet extends HttpServlet {
 				Iterator iterator = list.iterator();
 				while(iterator.hasNext()){
 					FileItem fItem = (FileItem)iterator.next();
+					System.out.println(fItem);
 					//(6)ファイルデータの場合、if内を実行
 					if(!(fItem.isFormField())){
 						//(7)ファイルデータのファイル名(PATH名含む)を取得
@@ -93,12 +95,12 @@ public class UploadFileServlet extends HttpServlet {
 						if((fileName != null) && (!fileName.equals(""))){
 							//(8)PATH名を除くファイル名のみを取得
 							fileName=(new File(fileName)).getName();
-							//(9)ファイルデータを指定されたファイルに書き出し
 							File file = new File(path + "/" + udb.getUser());
 							//ユーザ事のフォルダ作成
 							file.mkdir();
 							//ファイル書き込み
 							size = fItem.getSize();
+							//(9)ファイルデータを指定されたファイルに書き出し
 							fItem.write(new File(path + "/" + udb.getUser() + "/" +fileName));
 						}
 						//フォームの内容を取得
@@ -123,24 +125,30 @@ public class UploadFileServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-			pdb.setUserId(udb.getUser());
-			pdb.setProductName(name);
-			pdb.setProductText(desc);
-			pdb.setProductFileName(fileName);
-			pdb.setProductSize(String.valueOf(size));
-			pdb.setProductPoint(point);
-			pdb.setCategory(select);
+			try{
+				pdb.setUserId(udb.getUser());
+				pdb.setProductName(name);
+				pdb.setProductText(desc);
+				pdb.setProductFileName(fileName);
+				pdb.setProductSize(String.valueOf(size));
+				pdb.setProductPoint(Integer.parseInt(point));
+				pdb.setCategory(select);
+			}catch(NumberFormatException e){
+				e.printStackTrace();
+				msg = "数値以外が入力されました。";
+			}
 			
 			//DAOに商品情報オブジェクトを渡す
-			dao.uploadFile(pdb);
+			ret = dao.uploadFile(pdb);
+			if(ret == 1){
+				msg = "送信しました。";
+			}else{
+				msg = "データベース接続エラー。";
+			}
 			
-			msg = "送信しました。";
 		}else{
 			msg = "無効なアクセスです。";
 		}
-
-
-
 
 		//転送
 		RequestDispatcher disp = request.getRequestDispatcher("msg.jsp");
