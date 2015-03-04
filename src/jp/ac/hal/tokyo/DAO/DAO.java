@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import jp.ac.hal.tokyo.Beans.*;
@@ -219,7 +220,7 @@ public class DAO {
 			ps = con.prepareStatement(sql);
 			
 			ps.setString(1, pdb.getUserId());
-			ps.setString(2, null);//カテゴリーID
+			ps.setString(2, "1");//カテゴリーID
 			ps.setString(3, pdb.getProductName());
 			ps.setInt(4, pdb.getProductPoint());
 			ps.setString(5, pdb.getProductText());
@@ -239,6 +240,73 @@ public class DAO {
 		}
 		
 
+		return ret;
+	}
+	
+	public ArrayList<ProductDataBean> searchProduct(String text, String category){
+		String sql = "";
+		ArrayList<ProductDataBean> ret = new ArrayList<ProductDataBean>();
+		
+		if(text != null && category.equals("カテゴリ")){
+			sql = "select * from t_product, t_user where product_name like ? and t_user.user_id = t_product.user_id;";
+			System.out.println(sql);
+			
+			this.getConnection();
+			
+			try{
+				ps = con.prepareStatement(sql);
+				
+				ps.setString(1, "%" + text + "%");
+				
+				rs = ps.executeQuery();
+				
+				while(rs.next()){
+					ProductDataBean pdb = new ProductDataBean();
+					pdb.setProductName(rs.getString("product_name"));
+					pdb.setAuthor(rs.getString("user_name"));
+					pdb.setProductPoint(rs.getInt("product_point"));
+					ret.add(pdb);
+				}
+				
+			}catch(SQLException e){
+				e.printStackTrace();
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally{
+				this.close();
+			}
+			
+		}else if(text != null && !category.equals("カテゴリ")){
+			sql = "select * from t_product where product_name like ? and category_id = (select category_id from t_category where category_name = ?) and t_user.user_id = t_product.user_id;";
+			System.out.println(sql);
+			
+			this.getConnection();
+			
+			try{
+				ps = con.prepareStatement(sql);
+				
+				ps.setString(1, "%" + text + "%");
+				ps.setString(2, category);
+				
+				rs = ps.executeQuery();
+				
+				while(rs.next()){
+					ProductDataBean pdb = new ProductDataBean();
+					pdb.setProductName(rs.getString("product_name"));
+					pdb.setAuthor(rs.getString("user_name"));
+					pdb.setProductPoint(rs.getInt("product_point"));
+					ret.add(pdb);
+				}
+				
+			}catch(SQLException e){
+				e.printStackTrace();
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally{
+				this.close();
+			}
+		}
+		
 		return ret;
 	}
 

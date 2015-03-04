@@ -36,7 +36,7 @@
 		<option>ゲーム</option>
 		<option>ツール</option>
 		<option>ニュース</option>
-		<option>-----</option>
+		<option>test</option>
 		<option>-----</option>
 		<option>-----</option>
 	</select>
