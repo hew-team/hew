@@ -1,0 +1,112 @@
+﻿@charset "UTF-8";
+
+
+
+/* MAIN ************************************************************/
+#review	{
+		width:960px;
+		padding:0px;
+		margin:0px;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#review p[class="reviewDate"]{
+		width:150px;
+		padding:0px 0px 0px 0px;
+		margin:20px 0px 0px 0px;
+		text-align:center;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 0px 1px;
+		background-color:transparent;
+		float:right;
+	}
+#review img[class="userIcon"]{
+		width:20px;
+		height:20px;
+		margin:1px 5px 1px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#review a[class="userIcon"]{
+		width:20px;
+		height:20px;
+		margin:1px 5px 1px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#review p[class="reviewUser"]{
+		padding:0px 10px 0px 10px;
+		margin:20px 0px 0px 0px;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 0px 1px;
+		background-color:transparent;
+		float:left;
+	}
+#review p[class="reviewTitle"]{
+		width:822px;
+		padding:0px 0px 4px 0px;
+		margin:0px 0px 0px 0px;
+		text-align:center;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 0px 0px 1px;
+		background-color:lightblue;
+		float:left;
+		clear:both;
+	}
+#review table{
+		width:137px;
+		height:25px;
+		margin:0px 0px 0px 0px;
+		border:1px solid #000;
+		border-collapse:collapse;
+		background-color:transparent;
+		float:left;
+	}
+#review td{
+		width:25px;
+		height:25px;
+		padding:1px 1px 1px 1px;
+		margin:0px;
+		line-height:0em;
+		border:1px solid #000;
+		background-color:transparent;
+	}
+#review p[class="review"]{
+		width:948px;
+		padding:5px 5px 5px 5px;
+		margin:0px 0px 0px 0px;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 1px 1px;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#review p[class="reviewTotal"]{
+		width:500px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 20px 0px;
+		text-align:center;
+		border-style:solid;
+		border-color:#000;
+		border-width:0px 1px 1px 1px;
+		background-color:transparent;
+		float:left;
+	}
+#review p[class="reviewMore"]{
+		width:350px;
+		height:33px;
+		padding:10px 0px 0px 0px;
+		margin:-20px 0px 20px 0px;
+		font-size:15px;
+		text-align:center;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 1px 1px;
+		background-color:#fff;
+		float:right;
+	}

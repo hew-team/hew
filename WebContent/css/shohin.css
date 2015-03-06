@@ -1,0 +1,343 @@
+﻿@charset "UTF-8";
+
+
+
+/* MAIN ************************************************************/
+#shohin	{
+		width:960px;
+		background-color:transparent;
+		float:left;
+	}
+#shohin p[class="icon"]{
+		width:140px;
+		height:140px;
+		margin:0px 20px 0px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#shohin p[class="datecate"]{
+		width:260px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#shohin p[class="user"]{
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		font-size:16px;
+		background-color:transparent;
+		float:left;
+	}
+#review img[class="userIcon"]{
+		width:20px;
+		height:20px;
+		margin:1px 5px 1px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#review a[class="userIcon"]{
+		width:20px;
+		height:20px;
+		margin:1px 5px 1px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#shohin p[class="bookmark"]{
+		width:30px;
+		height:30px;
+		margin:0px 0px 5px 10px;
+		background-color:transparent;
+		float:left;
+	}
+#shohinName{
+		width:690px;
+		padding:0px;
+		margin:0px 0px 0px 0px;
+		border:1px solid #000;
+		background-color:lightblue;
+		float:left;
+	}
+#shohinName p{
+		padding:10px 10px 10px 10px;
+		margin:0px 0px 0px 0px;
+		font-size:30px;line-height:1.2em;
+		font-weight:bold;
+		background-color:lightblue;
+		float:left;
+	}
+#star	{
+		width:750px;
+		height:46px;
+		padding:0px;
+		margin:10px 50px 20px 140px;
+		background-color:transparent;
+		float:right;
+	}
+#star table{
+		height:30px;
+		margin:5px 0px 5px 0px;
+		border:1px solid #000;
+		border-collapse:collapse;
+		float:left;
+	}
+#star td[class="star"]{
+		width:30px;
+		height:30px;
+		padding:2px 2px 2px 2px;
+		margin:0px;
+		line-height:0em;
+		border:1px solid #000;
+		background-color:transparent;
+	}
+#star td[class="total"]{
+		height:30px;
+		padding:2px 4px 2px 4px;
+		margin:0px;
+		text-align:right;
+		line-height:1em;
+		border:1px solid #000;
+		background-color:transparent;
+	}
+#star input{
+		width:180px;
+		height:20px;
+		padding:5px 0px 28px 0px;
+		margin:4px 0px 4px 50px;
+		font-size:20px;
+		font-weight:bold;
+		float:right;
+	}
+#star p[class="price"]{
+		height:25px;
+		padding:5px 20px 5px 20px;
+		margin:5px 0px 5px 0px;
+		color:red;
+		font-size:28px;
+		text-align:center;
+		border:1px solid #000;
+		background-color:transparent;
+		float:right;
+	}
+#shohin table[class="link"]{
+		width:960px;
+		padding:0px 0px 0px 0px;
+		margin:0px;
+		font-size:15px;
+		border:1px solid #000;
+		border-collapse:collapse;
+		background-color:transparent;
+		float:left;
+	}
+#shohin td[class="link"]{
+		height:15px;
+		padding:0px 0px 0px 0px;
+		margin:0px;
+		text-align:center;
+		border:1px solid #000;
+		background-color:lightblue;
+	}
+#shohin a[class="link"]{
+		width:237px;
+		height:23px;
+		padding:0px;
+		margin:0px;
+		color:blue;
+		text-decoration:none;
+		display:inline-block;
+		background-color:lightblue;
+	}
+#shohin a[class="link"]:link{/*まだ見てない*/
+		color:blue;
+		background-color:lightblue;
+	}
+#shohin a[class="link"]:visited{/*既に見た*/
+		color:blue;
+		background-color:lightblue;
+	}
+#shohin a[class="link"]:hover{/*カーソルが合った*/
+		color:lightblue;
+		background-color:blue;
+	}
+#shohin a[class="link"]:active{/*クリックした*/
+		color:lightblue;
+		background-color:blue;
+	}
+#image	{
+		width:958px;
+		height:345px;
+		padding:0px;
+		margin:15px 0px 15px 0px;
+		border:1px solid #000;
+		background-color:transparent;
+		overflow-x:scroll;
+		float:left;
+		clear:both;
+	}
+#image img{
+		width:180px;
+		height:320px;
+		margin:0px 20px 0px 20px;
+		background-color:transparent;
+		float:left;
+	}
+#shohin ul[class="detail"]{
+		padding:0px;
+		margin:0px;
+		list-style:none;
+	}
+#shohin li[class="detailTitle"]{
+		width:150px;
+		padding:0px 0px 0px 0px;
+		margin:20px 0px 0px 0px;
+		color:blue;
+		text-align:center;
+		font-weight:bold;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 0px 1px;
+		background-color:lightblue;
+		float:left;
+		clear:both;
+	}
+#shohin li[class="detail"]{
+		width:938px;
+		padding:5px 10px 5px 10px;
+		margin:0px 0px 20px 0px;
+		border:1px solid #000;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#shohin p[class="detailTitle"]{
+		width:150px;
+		padding:0px 0px 0px 0px;
+		margin:20px 0px 0px 0px;
+		color:blue;
+		text-align:center;
+		font-weight:bold;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 0px 1px;
+		background-color:lightblue;
+		float:left;
+	}
+#shohin p[class="total"]{
+		width:200px;
+		padding:0px 0px 0px 0px;
+		margin:20px 0px 0px 30px;
+		color:blue;
+		text-align:center;
+		font-weight:bold;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 0px 1px;
+		background-color:lightblue;
+		float:left;
+	}
+#review	{
+		width:938px;
+		padding:10px;
+		margin:0px;
+		border:1px solid #000;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#review p[class="reviewDate"]{
+		width:150px;
+		padding:0px 0px 0px 0px;
+		margin:20px 0px 0px 0px;
+		text-align:center;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 0px 1px;
+		background-color:transparent;
+		float:right;
+	}
+#review p[class="reviewUser"]{
+		padding:0px 10px 0px 10px;
+		margin:20px 0px 0px 0px;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 0px 1px;
+		background-color:transparent;
+		float:left;
+	}
+#review p[class="reviewTitle"]{
+		width:800px;
+		padding:0px 0px 4px 0px;
+		margin:0px 0px 0px 0px;
+		text-align:center;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 0px 0px 1px;
+		background-color:lightblue;
+		float:left;
+		clear:both;
+	}
+#review table{
+		width:137px;
+		height:25px;
+		margin:0px 0px 0px 0px;
+		border:1px solid #000;
+		border-collapse:collapse;
+		background-color:transparent;
+		float:left;
+	}
+#review td{
+		width:25px;
+		height:25px;
+		padding:1px 1px 1px 1px;
+		margin:0px;
+		line-height:0em;
+		border:1px solid #000;
+		background-color:transparent;
+	}
+#review p[class="review"]{
+		width:926px;
+		padding:5px 5px 5px 5px;
+		margin:0px 0px 0px 0px;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 1px 1px;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#review p[class="reviewTotal"]{
+		width:500px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 20px 0px;
+		text-align:center;
+		border-style:solid;
+		border-color:#000;
+		border-width:0px 1px 1px 1px;
+		background-color:transparent;
+		float:left;
+	}
+#review p[class="reviewMore"]{
+		width:350px;
+		height:33px;
+		padding:10px 0px 0px 0px;
+		margin:-20px 0px 20px 0px;
+		font-size:15px;
+		text-align:center;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 1px 1px;
+		background-color:#fff;
+		float:right;
+	}
+#shohin p[class="More"]{
+		width:200px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		text-align:center;
+		border-style:solid;
+		border-color:#000;
+		border-width:0px 1px 1px 1px;
+		background-color:transparent;
+		float:right;
+		clear:both;
+	}

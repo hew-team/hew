@@ -1,0 +1,223 @@
+﻿@charset "UTF-8";
+
+
+
+/* MAIN ************************************************************/
+#reviewDetail{
+		width:960px;
+		margin:20px 0px 0px 0px;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#reviewDetail p[class="bookmark"]{
+		width:30px;
+		height:30px;
+		margin:0px 0px 5px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#reviewDetail p[class="reviewDate"]{
+		width:150px;
+		text-align:center;
+		background-color:transparent;
+		float:left;
+	}
+#reviewDetail p[class="reviewTotal"]{
+		margin:0px 0px 0px 0px;
+		background-color:transparent;
+		float:right;
+	}
+#reviewDetail form[class="sankou"]{
+		width:200px;
+		height:24px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		font-size:15px;
+		text-align:center;
+		background-color:transparent;
+		float:right;
+	}
+#reviewDetail p[class="reviewTitle"]{
+		width:938px;
+		padding:5px 10px 5px 10px;
+		text-align:center;
+		font-weight:bold;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 0px 1px;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#reviewDetail p[class="reviewHonbun"]{
+		width:928px;
+		padding:5px 15px 5px 15px;
+		margin:0px 0px 20px 0px;
+		border:1px solid #000;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#reviewDetail form[class="irai"]{
+		width:180px;
+		height:24px;
+		padding:0px 0px 0px 0px;
+		margin:-45px 0px 20px 0px;
+		font-size:15px;
+		text-align:center;
+		background-color:transparent;
+		float:right;
+	}
+#star	{
+		width:960px;
+		height:50px;
+		padding:0px;
+		margin:0px 0px 10px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#star p[class="reviewUserIcon"]{
+		width:50px;
+		height:50px;
+		margin:0px 10px 0px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#star a[class="reviewUserIcon"]{
+		width:50px;
+		height:50px;
+	}
+#star p[class="reviewUser"]{
+		padding:10px 0px 0px 0px;
+		font-size:17px;
+		background-color:transparent;
+		float:left;
+	}
+#star table{
+		height:34px;
+		margin:5px 0px 5px 0px;
+		border:1px solid #000;
+		border-collapse:collapse;
+		float:right;
+	}
+#star td[class="star"]{
+		width:34px;
+		height:34px;
+		padding:2px 2px 2px 2px;
+		margin:0px;
+		line-height:0em;
+		border:1px solid #000;
+		background-color:transparent;
+	}
+#reviewDetail p[class="detailTitle"]{
+		width:200px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		color:blue;
+		text-align:center;
+		font-weight:bold;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 0px 1px;
+		background-color:transparent;
+		float:left;
+	}
+#reviewDetail p[class="total"]{
+		width:200px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 30px;
+		color:blue;
+		text-align:center;
+		font-weight:bold;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 0px 1px;
+		background-color:transparent;
+		float:left;
+	}
+#reviewDetail img[class="userIcon"]{
+		width:20px;
+		height:20px;
+		margin:1px 5px 1px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#reviewDetail a[class="userIcon"]{
+		width:20px;
+		height:20px;
+		margin:1px 5px 1px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#comment{
+		width:938px;
+		padding:10px;
+		margin:0px;
+		border:1px solid #000;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#comment p[class="commentDate"]{
+		width:150px;
+		padding:0px 0px 0px 0px;
+		margin:20px 0px 0px 0px;
+		text-align:center;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 0px 1px;
+		background-color:transparent;
+		float:right;
+	}
+#comment p[class="commentUser"]{
+		padding:0px 10px 0px 10px;
+		margin:20px 0px 0px 0px;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 0px 1px;
+		background-color:transparent;
+		float:left;
+	}
+#comment p[class="comment"]{
+		width:926px;
+		padding:5px 5px 5px 5px;
+		margin:0px 0px 20px 0px;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 1px 1px;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#reviewDetail p[class="More"]{
+		width:200px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		text-align:center;
+		border-style:solid;
+		border-color:#000;
+		border-width:0px 1px 1px 1px;
+		background-color:transparent;
+		float:right;
+		clear:both;
+	}
+#makeComment{
+		width:960px;
+		margin:20px 0px 0px 0px;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#makeComment textarea{
+		width:954px;
+		height:70px;
+		font-size:15px;
+		float:left;
+	}
+#makeComment input[class="submit"]{
+		width:200px;
+		height:35px;
+		font-size:15px;
+		float:right;
+	}

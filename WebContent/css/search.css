@@ -1,0 +1,108 @@
+﻿@charset "UTF-8";
+
+
+
+/* MAIN ************************************************************/
+#search	{
+		width:940px;
+		padding:0px 10px 0px 10px;
+		margin:0px;
+		background-color:transparent;
+		float:left;
+	}
+#search	table{
+		width:940px;
+		padding:0px;
+		margin:0px;
+		border:1px solid #000;
+		border-collapse:collapse;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#search	td[class="left"]{
+		width:80px;
+		height:13px;
+		padding:0px 10px 0px 10px;
+		color:#000;
+		text-align:center;
+		border:1px solid #000;
+		background-color:lightblue;
+	}
+#search	td[class="right"]{
+		width:350px;
+		height:13px;
+		padding:0px 10px 0px 10px;
+		color:#000;
+		text-align:left;
+		border:1px solid #000;
+		background-color:transparent;
+	}
+#searchRe{
+		width:958px;
+		padding:0px 0px 10px 0px;
+		margin:10px 0px 0px 0px;
+		border:1px solid #000;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#searchRe p[class="title"]{
+		width:958px;
+		padding:3px 0px 0px 0px;
+		margin:0px;
+		color:darkblue;
+		font-size:15px;
+		font-weight:bold;
+		text-align:center;
+		background-color:lightblue;
+		border-style:solid;
+		border-width:0px 0px 1px 0px;
+		border-color:#000;
+		float:left;
+		clear:both;
+	}
+#searchRe table{
+		width:958px;
+		padding:0px;
+		margin:5px 0px -20px 0px;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#searchRe td[class="left"]{
+		width:60px;
+		height:13px;
+		padding:5px 10px 5px 10px;
+		color:#000;
+		text-align:left;
+		background-color:transparent;
+	}
+#searchRe td[class="rightR"]{
+		width:390px;
+		height:13px;
+		padding:5px 10px 5px 10px;
+		color:#000;
+		text-align:left;
+		background-color:transparent;
+	}
+#searchRe td[class="rightL"]{
+		width:310px;
+		height:13px;
+		padding:5px 10px 5px 10px;
+		color:#000;
+		text-align:left;
+		background-color:transparent;
+	}
+#searchRe input[class="reset"]{
+		margin:0px 50px 0px 70px;
+		float:right;
+	}
+#searchRe input[class="search"]{
+		width:150px;
+		height:35px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		font-size:15px;
+		float:right;
+	}

@@ -1,0 +1,435 @@
+﻿@charset "UTF-8";
+
+
+
+/* MAIN ************************************************************/
+#user	{
+		width:185px;
+		height:59px;
+		padding:0px 20px 20px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#user p[class="image"]{
+		width:57px;
+		height:57px;
+		margin:0px 0px 0px 0px;
+		padding:0px 0px 0px 0px;
+		border:1px solid #000;
+		background-color:transparent;
+		float:left;
+	}
+#user a[class="image"]{
+		width:57px;
+		height:57px;
+		display:inline-block;
+	}
+#user p[class="userPoint"]{
+		width:105px;
+		height:15px;
+		padding:0px 5px 8px 5px;
+		margin:0px 0px 0px 0px;
+		color:blue;
+		font-size:15px;
+		font-weight:bold;
+		text-align:center;
+		border-style:solid;
+		border-width:1px 1px 0px 1px;
+		border-color:#000;
+		background-color:lightblue;
+		float:right;
+	}
+#user p[class="point"]{
+		width:105px;
+		height:23px;
+		padding:5px 5px 5px 5px;
+		font-size:18px;
+		text-align:center;
+		border:1px solid #000;
+		background-color:transparent;
+		overflow:hidden;
+		float:right;
+	}
+#user a[class="point"]{
+		width:104px;
+		height:23px;
+		padding:0px;
+		margin:0px;
+		display:inline-block;
+	}
+#search	{
+		width:185px;
+		padding:0px 20px 0px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#search ul{
+		width:183px;
+		padding:0px 0px 10px 0px;
+		margin:0px 0px 0px 0px;
+		text-align:center;
+		list-style:none;
+		border-style:solid;
+		border-width:0px 1px 1px 1px;
+		border-color:#000;
+		background-color:transparent;
+	}
+#search li[class="search"]{
+		width:183px;
+		height:20px;
+		padding:0px 0px 2px 0px;
+		margin:0px 0px 5px 0px;
+		color:blue;
+		font-size:15px;
+		font-weight:bold;
+		text-align:center;
+		border-style:solid;
+		border-width:1px 0px 1px 0px;
+		border-color:#000;
+		background-color:lightblue;
+		float:left;
+		clear:both;
+	}
+#search li[class="searchName"]{
+		margin:0px 0px 0px 0px;
+		background-color:transparent;
+	}
+#search li[class="form"]{
+		margin:0px 0px 10px 0px;
+		background-color:transparent;
+	}
+#search input[class="reset"]{
+		width:45px;
+		height:25px;
+		margin:0px 15px 0px 0px;
+	}
+#search input[class="search"]{
+		width:80px;
+		height:35px;
+	}
+#news	{
+		width:755px;
+		margin:0px 0px 0px 0px;
+		padding:0px 0px 20px 0px;
+		background-color:transparent;
+		float:right;
+	}
+#news p[class="news"]{
+		width:300px;
+		height:20px;
+		padding:0px 0px 2px 0px;
+		margin:0px 0px 0px 0px;
+		border-style:solid;
+		border-width:1px 1px 0px 1px;
+		border-color:#000;
+		color:blue;
+		font-size:15px;
+		background-color:lightblue;
+		font-weight:bold;
+		text-align:center;
+		float:left;
+		clear:both;
+	}
+#news table{
+		width:755px;
+		padding:0px;
+		margin:0px 0px 0px 0px;
+		border:1px solid #000;
+		border-collapse:collapse;
+		background-color:transparent;
+		float:left;
+	}
+#news td[class="news"]{
+		width:70px;
+		height:15px;
+		padding:0px 0px 0px 0px;
+		margin:0px;
+		text-align:center;
+		border:1px solid #000;
+		background-color:transparent;
+	}
+#news td[class="news01"]{
+		width:500px;
+		height:20px;
+		padding:0px 0px 0px 5px;
+		margin:0px 0px 0px 0px;
+		text-align:left;
+		border-style:solid;
+		border-width:1px 0px 1px 1px;
+		border-color:#000;
+		background-color:transparent;
+	}
+#news td[class="more01"]{
+		width:75px;
+		height:20px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		text-align:center;
+		border-style:solid;
+		border-width:1px 1px 1px 0px;
+		border-color:#000;
+		background-color:transparent;
+	}
+#news td[class="more"]{
+		width:145px;
+		height:20px;
+		padding:0px;
+		margin:0px;
+		text-align:center;
+		border:1px solid #000;
+		background-color:transparent;
+	}
+#kiji	{
+		width:545px;
+		padding:0px 0px 20px 0px;
+		margin:0px 0px 0px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#kiji p[class="kiji"]{
+		width:300px;
+		height:20px;
+		padding:0px 0px 2px 0px;
+		margin:0px 0px 0px 0px;
+		border-style:solid;
+		border-width:1px 1px 0px 1px;
+		border-color:#000;
+		color:blue;
+		font-size:15px;
+		font-weight:bold;
+		text-align:center;
+		background-color:lightblue;
+		float:left;
+		clear:both;
+	}
+#kiji ul{
+		width:543px;
+		padding:0px 0px 5px 0px;
+		margin:0px 0px 0px 0px;
+		list-style:none;
+		border:1px solid #000;
+		background-color:transparent;
+		clear:both;
+	}
+#kiji li{
+		width:533px;
+		height:15px;
+		padding:2px 5px 6px 5px;
+		margin:0px 0px 0px 0px;
+		text-align:left;
+		background-color:transparent;
+	}
+#kiji p[class="more"]{
+		width:150px;
+		height:15px;
+		padding:0px 0px 8px 0px;
+		margin:0px 0px 0px 0px;
+		text-align:center;
+		border-style:solid;
+		border-width:0px 1px 1px 1px;
+		border-color:#000;
+		background-color:transparent;
+		float:right;
+		clear:both;
+	}
+#new	{
+		width:545px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#newN	{
+		width:260px;
+		padding:0px;
+		margin:0px 10px 0px 0px;
+		border:1px solid #000;
+		background-color:transparent;
+		float:left;
+	}
+#newU	{
+		width:260px;
+		padding:0px;
+		margin:0px 0px 0px 10px;
+		border:1px solid #000;
+		background-color:transparent;
+		float:right;
+	}
+#new p[class="title"]{
+		width:260px;
+		height:20px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		color:blue;
+		font-size:15px;
+		text-align:center;
+		font-weight:bold;
+		border-style:solid;
+		border-width:0px 0px 1px 0px;
+		border-color:#000;
+		background-color:lightblue;
+		float:left;
+		clear:both;
+	}
+#new ul{
+		width:100px;
+		padding:0px 0px 0px 0px;
+		margin:10px 15px 10px 15px;
+		list-style:none;
+		background-color:transparent;
+	}
+#new ul.L{
+		float:left;
+	}
+#new ul.R{
+		float:right;
+	}
+#new li[class="shohinIcon"]{
+		width:80px;
+		height:80px;
+		padding:0px 0px 0px 0px;
+		margin:0px 10px 0px 10px;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#new a[class="shohinIcon"]{
+		width:80px;
+		height:80px;
+		text-decoration:none;
+		display:inline-block;
+	}
+#new li[class="shohinName"]{
+		width:100px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		text-align:center;
+		background-color:transparent;
+		overflow:auto;
+		float:left;
+		clear:both;
+	}
+#new li[class="shohinPrice"]{
+		width:100px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		text-align:center;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#new p[class="more"]{
+		width:260px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		text-align:center;
+		border-style:solid;
+		border-width:1px 0px 0px 0px;
+		border-color:#000;
+		background-color:transparent;
+		float:left;
+	}
+#rank	{
+		width:190px;
+		padding:0px 0px 0px 20px;
+		margin:0px 0px 0px 0px;
+		float:right;
+		background-color:transparent;
+	}
+#rank ul{
+		width:188px;
+		padding:0px;
+		margin:0px 0px 0px 0px;
+		list-style:none;
+		border:1px solid #000;
+		background-color:transparent;
+		float:right;
+	}
+#rank li[class="rankName"]{
+		width:188px;
+		height:20px;
+		padding:0px 0px 2px 0px;
+		margin:0px 0px 0px 0px;
+		color:blue;
+		font-size:15px;
+		text-align:center;
+		font-weight:bold;
+		border-style:solid;
+		border-width:0px 0px 1px 0px;
+		border-color:#000;
+		background-color:lightblue;
+		float:left;
+		clear:both;
+	}
+#rank li[class="rank01"]{
+		width:188px;
+		height:12px;
+		padding:2px 0px 2px 0px;
+		margin:0px 0px 0px 0px;
+		font-size:12px;
+		font-weight:bold;
+		text-align:center;
+		line-height:1.2em;
+		border-style:solid;
+		border-width:0px 0px 1px 0px;
+		border-color:#000;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#rank li[class="shohinIcon"]{
+		width:50px;
+		height:50px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#rank a[class="shohinIcon"]{
+		width:50px;
+		height:50px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		text-decoration:none;
+	}
+#rank li[class="shohinName"]{
+		width:130px;
+		padding:2px 2px 2px 6px;
+		margin:0px 0px 0px 0px;
+		background-color:transparent;
+		float:right;
+	}
+#rank li[class="shohinPrice"]{
+		width:138px;
+		height:10px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		font-size:10px;
+		text-align:center;
+		line-height:1.2em;
+		background-color:transparent;
+		float:right;
+	}
+#rank li[class="more"]{
+		width:188px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		text-align:right;
+		border-style:solid;
+		border-width:1px 0px 1px 0px;
+		border-color:#000;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#rank li[class="moreRank"]{
+		width:188px;
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+		text-align:center;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+
+
