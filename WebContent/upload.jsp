@@ -23,6 +23,7 @@
 	<ul>
 		<li><a href="index.jsp">home</a></li>
 		<li><a href="upload.jsp">upload</a></li>
+		<li><a href="search.jsp">search</a></li>
 	</ul>
 	
 

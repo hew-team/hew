@@ -10,6 +10,7 @@
 	<ul>
 		<li><a href="index.jsp">home</a></li>
 		<li><a href="upload.jsp">upload</a></li>
+		<li><a href="search.jsp">search</a></li>
 	</ul>
 	<a href="signup.jsp">新規登録</a>
 	<h1>login</h1>

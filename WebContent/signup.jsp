@@ -12,6 +12,7 @@
 	<ul>
 		<li><a href="index.jsp">home</a></li>
 		<li><a href="upload.jsp">upload</a></li>
+		<li><a href="search.jsp">search</a></li>
 	</ul>
 	<h1>新規会員登録</h1>
 	<div id="msg" style="color:red"></div><br>

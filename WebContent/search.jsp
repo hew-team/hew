@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<ul>
+		<li><a href="index.jsp">home</a></li>
+		<li><a href="upload.jsp">upload</a></li>
+		<li><a href="search.jsp">search</a></li>
+	</ul>
 	<h1>商品検索</h1>
 	<form action="SearchServlet" method="post">
 		<input type="text" name="text">

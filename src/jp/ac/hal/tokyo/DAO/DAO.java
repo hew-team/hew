@@ -247,9 +247,9 @@ public class DAO {
 		String sql = "";
 		ArrayList<ProductDataBean> ret = new ArrayList<ProductDataBean>();
 		
-		if(text != null && category.equals("カテゴリ")){
+		
+		if(text != null && !text.equals("") && category.equals("カテゴリ")){
 			sql = "select * from t_product, t_user where product_name like ? and t_user.user_id = t_product.user_id;";
-			System.out.println(sql);
 			
 			this.getConnection();
 			
@@ -262,9 +262,11 @@ public class DAO {
 				
 				while(rs.next()){
 					ProductDataBean pdb = new ProductDataBean();
+					pdb.setUserId(rs.getString("l_user_id"));
 					pdb.setProductName(rs.getString("product_name"));
 					pdb.setAuthor(rs.getString("user_name"));
 					pdb.setProductPoint(rs.getInt("product_point"));
+					pdb.setProductFileName(rs.getString("product_file"));
 					ret.add(pdb);
 				}
 				
@@ -276,9 +278,8 @@ public class DAO {
 				this.close();
 			}
 			
-		}else if(text != null && !category.equals("カテゴリ")){
-			sql = "select * from t_product where product_name like ? and category_id = (select category_id from t_category where category_name = ?) and t_user.user_id = t_product.user_id;";
-			System.out.println(sql);
+		}else if(text != null && !text.equals("") && !category.equals("カテゴリ")){
+			sql = "select * from t_product, t_user where product_name like ? and category_id = (select category_id from t_category where category_name = ?) and t_user.user_id = t_product.user_id;";
 			
 			this.getConnection();
 			
@@ -292,9 +293,67 @@ public class DAO {
 				
 				while(rs.next()){
 					ProductDataBean pdb = new ProductDataBean();
+					pdb.setUserId(rs.getString("l_user_id"));
 					pdb.setProductName(rs.getString("product_name"));
 					pdb.setAuthor(rs.getString("user_name"));
 					pdb.setProductPoint(rs.getInt("product_point"));
+					pdb.setProductFileName(rs.getString("product_file"));
+					ret.add(pdb);
+				}
+				
+			}catch(SQLException e){
+				e.printStackTrace();
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally{
+				this.close();
+			}
+		}else if((text == null || text.equals("")) && category.equals("カテゴリ")){
+			sql = "select * from t_product, t_user where t_user.user_id = t_product.user_id;";
+			
+			this.getConnection();
+			
+			try{
+				ps = con.prepareStatement(sql);
+				
+				rs = ps.executeQuery();
+				
+				while(rs.next()){
+					ProductDataBean pdb = new ProductDataBean();
+					pdb.setUserId(rs.getString("l_user_id"));
+					pdb.setProductName(rs.getString("product_name"));
+					pdb.setAuthor(rs.getString("user_name"));
+					pdb.setProductPoint(rs.getInt("product_point"));
+					pdb.setProductFileName(rs.getString("product_file"));
+					ret.add(pdb);
+				}
+				
+			}catch(SQLException e){
+				e.printStackTrace();
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally{
+				this.close();
+			}
+		}else if((text == null || text.equals("")) && !category.equals("カテゴリ")){
+			sql = "select * from t_product, t_user where category_id = (select category_id from t_category where category_name = ?) and t_user.user_id = t_product.user_id;";
+			
+			this.getConnection();
+			
+			try{
+				ps = con.prepareStatement(sql);
+				
+				ps.setString(1, category);
+				
+				rs = ps.executeQuery();
+				
+				while(rs.next()){
+					ProductDataBean pdb = new ProductDataBean();
+					pdb.setUserId(rs.getString("l_user_id"));
+					pdb.setProductName(rs.getString("product_name"));
+					pdb.setAuthor(rs.getString("user_name"));
+					pdb.setProductPoint(rs.getInt("product_point"));
+					pdb.setProductFileName(rs.getString("product_file"));
 					ret.add(pdb);
 				}
 				

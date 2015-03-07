@@ -42,12 +42,9 @@ public class SearchServlet extends HttpServlet {
 		String text = request.getParameter("text");
 		String category = request.getParameter("cate");
 		
-		System.out.println("text = " + text);
-		System.out.println("cate = " + category);
 		
 		ArrayList<ProductDataBean> ret = dao.searchProduct(text, category);
 		
-		System.out.println(ret);
 
 		//転送
 		RequestDispatcher disp = request.getRequestDispatcher("searchResult.jsp");
