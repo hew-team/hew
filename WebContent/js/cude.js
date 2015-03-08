@@ -17,6 +17,7 @@ window.onload = function(){
 		'border-width' : 10 // cubeの罫線幅
 	}
 	
+	var i = Math.floor( Math.random() * 100 );
 	// cubeの初期スタイル設定
 	var styleInit = {
 		position:'absolute',
@@ -24,8 +25,8 @@ window.onload = function(){
 		display : 'inline-block',
 		opacity : 0.3,
 		'border-radius' : '100px',
-		height : 8,
-		width : 8,
+		height : 8 + i,
+		width : 8 + i,
 		adj : 0
 	}
 	
