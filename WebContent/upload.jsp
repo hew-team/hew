@@ -225,14 +225,8 @@
 			    imageObject.attr('src', reader.result);
 			    imageObject.attr('id', 'image');
 			    $('#drag-area2').append(imageObject);
-			    
-			    $('#image').on('dragleave', function(e){
-			    	e.preventDefault();
-			    	$('#image').on('drop',function(e){
-			    		
-			    	});
-			    });
 			};
+			
 			reader.onerror = function(e) {
 			    var result = $('#result');
 			    result.html('');

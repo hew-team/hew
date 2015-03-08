@@ -4,7 +4,6 @@
 
 	String id = (String)session.getAttribute("userId");
 
-	if(id == null){//転送
 		
 	final String REFPAGE1 = "http://localhost:8080/hew/search.jsp";
 	final String REFPAGE2 = "http://localhost:8080/hew/searchServlet";
@@ -55,7 +54,7 @@
 
 <div id="sort">
 	<p class="result">全000件</p>
-	<p><form action="#" method="post">
+	<form action="#" method="post">
 		<select name="sort">
 			<option value="名前順" selected="selected">名前順</option>
 			<option value="ダウンロード数順">ダウンロードが多い順</option>
@@ -63,7 +62,7 @@
 			<option value="投稿日時順">投稿日時が早い順</option>
 		</select>
 		<input type="submit" value="並べ替える" />
-	</form></p>
+	</form>
 </div>
 
 <p class="pagenumber"><a href="#"><<</a> 1 <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">10</a> <a href="#">>></a></p>
@@ -77,7 +76,7 @@ for(int i = 0 ; i < ret.size(); i++){
 	ProductDataBean pdb = ret.get(i);
 %>
 	<jsp:include page="ContentApp.jsp">
-		<jsp:param value="<%= "//upload//"+ pdb.getUserId() +"//"+pdb.getProductFileName() %>" name="url" />
+		<jsp:param value="<%= "/upload/"+ pdb.getUserId() +"/"+pdb.getProductFileName() %>" name="url" />
 		<jsp:param value="<%= pdb.getProductIcon() %>" name="icon" />
 		<jsp:param value="<%= pdb.getProductName() %>" name="AppName" />
 		<jsp:param value="<%= pdb.getAuthor() %>" name="Author" />
