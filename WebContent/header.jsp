@@ -5,19 +5,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-
 	<link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
-
-	<link rel="stylesheet" type="text/css" href="./css/common.css" />
-	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
-
-	<link rel="stylesheet" type="text/css" href="./css/shohin.css" />
-	<link rel="stylesheet" type="text/css" href="./css/mypage.css" />
-	
+	<link rel="stylesheet" type="text/css" href="./css/common.css" />	
 <%
 	if(request.getParameter("Path") != null){
 		%>
