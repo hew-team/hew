@@ -12,7 +12,7 @@
 		padding-left: 10px;
 	}
 </style>
-		<div>
+		<div class="container">
 
 			<h1>利用規約</h1>
 

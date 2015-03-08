@@ -11,12 +11,6 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 
 	<link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
-
-	<link rel="stylesheet" type="text/css" href="./css/common.css" />
-	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
-
-	<link rel="stylesheet" type="text/css" href="./css/shohin.css" />
-	<link rel="stylesheet" type="text/css" href="./css/mypage.css" />
 	
 <%
 	if(request.getParameter("Path") != null){
@@ -36,7 +30,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="user.jsp">Adler</a>
+      <a class="navbar-brand" href="index.jsp">Adler</a>
       <ul class="nav navbar-nav">
           <li class="active"><a href="index.jsp">home</a></li>
           <li><a href="">カテゴリ</a></li>
