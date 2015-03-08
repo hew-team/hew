@@ -13,55 +13,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="js/upload.js"></script>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/upload.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 </head>
 <body>
-	ようこそ<%= id %>さん。<br>
-	<ul>
-		<li><a href="index.jsp">home</a></li>
-		<li><a href="upload.jsp">upload</a></li>
-		<li><a href="search.jsp">search</a></li>
-	</ul>
-	
-
-	<label>商品名：<input type="text" name="name"></label><br>
-	<label>商品説明：<br>
-	<textarea rows="4" cols="40" placeholder="商品説明をご記入下さい" name="description"></textarea></label><br>
-	<label>購入ポイント：<input type="text" name="point" id="point"></label><br>
-	<label for="select">カテゴリ：</label>
-	<select id="select" name="select">
-		<option>カテゴリ</option>
-		<option>ゲーム</option>
-		<option>ツール</option>
-		<option>ニュース</option>
-		<option>test</option>
-		<option>-----</option>
-		<option>-----</option>
-	</select>
-	<br>
-	<button id="apk">apk</button>
-	<button id="icon">icon</button>
-	<button id="button" >送信</button>
-	<input type="hidden" name="msg" value="送信しました。">
-	
-	
-	<div id="dialog1">
-		<div id="drag-area1" style="width:100%;height:80%;border:dashed 1px #333;">
-			<p>アップロードするファイルをドロップ</p>
+	<nav class="navbar navbar-inverse">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="index.jsp">Adler</a>
+	      <ul class="nav navbar-nav">
+	          <li class="active"><a href="index.jsp">ホーム</a></li>
+	          <li><a href="ranking.jsp">アプリレビュー</a></li>
+	          <li><a href="ranking.jsp">ランキング</a></li>
+	          <li><a href="">カテゴリ</a></li>
+	          <li><a href="#">新作</a></li>
+	      </ul>
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	        <span class="sr-only">navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	    </div>
+	    <div id="navbar" class="navbar-collapse collapse">
+	<%
+		if(session.getAttribute("userId")!=null){
+			id = (String)session.getAttribute("userId");
+	%>
+			<div class="navbar-right navbar-form">
+				<div class="form-group" style="font-size:14px;color:white;">
+					こんにちは、<%= id %>さん
+				</div>
+				<form action="UserServlet" method="post" style="display:inline;">
+					<button class="btn btn-primary" name="logout">
+						LogOut <span class="glyphicon glyphicon-log-out"></span>
+					</button>
+				</form>
+			</div>
+	<%		
+		}else{
+	%>
+	     <form action="UserServlet" method="post" class="navbar-form navbar-right">      
+	        <div class="form-group">
+	          <input type="text" name="userId" placeholder="UserID" class="form-control">
+	        </div>
+	        <div class="form-group">
+	          <input type="password" name="passwd" placeholder="Password" class="form-control">
+	        </div>
+	        <button name="login" type="submit" class="btn btn-success">LogIn <span class="glyphicon glyphicon-log-in"></span></button>
+		 </form>
+	<% 
+		out.println(id);
+		}
+	%>
+	    </div><!--/.navbar-collapse -->
+	  </div>
+	</nav>
+	<div class="container">
+		<h1>アプリアップロード</h1>
+		<div class="row">
+			<label for="productName" class="col-md-2">商品名：</label><input id="productName" type="text" name="name" class="col-md-2">
 		</div>
-		<div id="fileNameArea1"></div>
-	</div>
-	<div id="dialog2">
-		<div id="drag-area2" style="width:100%;height:80%;border:dashed 1px #333;">
-			<p>アップロードするファイルをドロップ</p>
+		<div class="row">
+			<label for="textarea" class="col-md-2">商品説明：</label>
+			<textarea id="textarea" class="col-md-2" rows="4" cols="40" placeholder="商品説明をご記入下さい" name="description"></textarea>
 		</div>
-		<div id="fileNameArea2"></div>
-		<div id="imageArea"></div>
+		<div class="row">
+			<label for="point" class="col-md-2">購入ポイント：</label><input type="text" name="point" id="point">
+		</div>
+		<div class="row">
+			<label for="select" class="col-md-2">カテゴリ：</label>
+			<select id="select" name="select" class="col-md-2">
+				<option>カテゴリ</option>
+				<option>ゲーム</option>
+				<option>ツール</option>
+				<option>ニュース</option>
+				<option>test</option>
+				<option>-----</option>
+				<option>-----</option>
+			</select>
+		</div>
+		<button id="apk">apk</button>
+		<button id="icon">icon</button>
+		<button id="button" >送信</button>
+		<input type="hidden" name="msg" value="送信しました。">
+		
+		
+		<div id="dialog1">
+			<div id="drag-area1" style="width:100%;height:80%;border:dashed 1px #333;">
+				<p>アップロードするファイルをドロップ</p>
+			</div>
+			<div id="fileNameArea1"></div>
+		</div>
+		<div id="dialog2">
+			<div id="drag-area2" style="width:100%;height:80%;border:dashed 1px #333;">
+				<p>アップロードするファイルをドロップ</p>
+			</div>
+			<div id="fileNameArea2"></div>
+			<div id="imageArea"></div>
+		</div>
 	</div>
 	<script type="text/javascript">
 	$(function(){
@@ -271,5 +326,9 @@
 			});
 		}
 	</script>
+	<div id="footerMenu" class="text-center col-xs-12">
+		<p><a href="index.jsp">HOME</a>／<a href="profile.jsp">会社概要</a>／<a href="tos.jsp">利用規約</a>／<a href="plicy.jsp">プライバシーポリシー</a>／<a href="qanda.jsp">よくある質問</a>／<a href="info.jsp">問い合わせ</a></p>
+		<p>Copyright&copy; team-ogawa All Rights Reserved.</p>
+	</div>
 </body>
 </html>

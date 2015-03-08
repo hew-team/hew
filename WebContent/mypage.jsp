@@ -4,7 +4,6 @@
 	//UTF-8を使う。
 	request.setCharacterEncoding("utf-8");
 	String getId = (String)session.getAttribute("userId");
-	out.print(getId);
 %>
 <jsp:include page="header.jsp">
 	<jsp:param value="マイページ" name="PageName" />
