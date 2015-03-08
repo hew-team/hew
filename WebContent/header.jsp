@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String id = "";
+%>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -43,16 +46,18 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
 <%
-	if(session.getAttribute("name")!=null){
-		String name = (String)session.getAttribute("name");
+	if(session.getAttribute("userId")!=null){
+		id = (String)session.getAttribute("userId");
 %>
 		<div class="navbar-right navbar-form">
 			<div class="form-group" style="font-size:14px;color:white;">
-				こんにちは、<%= name %>さん
+				こんにちは、<%= id %>さん
 			</div>
-			<a class="btn btn-primary" onclick="location.href='Logout'">
-				LogOut <span class="glyphicon glyphicon-log-out"></span>
-			</a>
+			<form action="UserServlet" method="post">
+				<button class="btn btn-primary" name="logout">
+					LogOut <span class="glyphicon glyphicon-log-out"></span>
+				</button>
+			</form>
 		</div>
 <%		
 	}else{
@@ -64,9 +69,10 @@
         <div class="form-group">
           <input type="password" name="passwd" placeholder="Password" class="form-control">
         </div>
-        <button type="submit" class="btn btn-success">LogIn <span class="glyphicon glyphicon-log-in"></span></button>
+        <button name="login" type="submit" class="btn btn-success">LogIn <span class="glyphicon glyphicon-log-in"></span></button>
 	 </form>
 <% 
+	out.println(id);
 	}
 %>
     </div><!--/.navbar-collapse -->

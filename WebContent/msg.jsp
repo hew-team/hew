@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>msg</title>
-</head>
-<body>
-	<ul>
-		<li><a href="index.jsp">home</a></li>
-		<li><a href="upload.jsp">upload</a></li>
-	</ul>
+<%
+	//UTF-8を使う。
+	request.setCharacterEncoding("utf-8");
+%>
+<jsp:include page="header.jsp">
+	<jsp:param value="msg" name="PageName" />
+</jsp:include>
+<script>
+	var y = $(window).height();
+	$('h1').css('height', y * 0.7 +'px').css('line-height', y * 0.7 + 'px').css('text-align', 'center');
+</script>
 	<%
 		//エラーフラグ
 		boolean err = false;
@@ -29,8 +29,6 @@
 		}
 	%>
 	
-	<a href="index.jsp">home</a>
 
 
-</body>
-</html>
+<jsp:include page="footer.jsp"></jsp:include>
