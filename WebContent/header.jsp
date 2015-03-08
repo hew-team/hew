@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="./css/common.css" />	
+	<link rel="stylesheet" type="text/css" href="./css/common.css" />
 <%
 	if(request.getParameter("Path") != null){
 		%>
@@ -16,7 +16,6 @@
 		<%
 	}
 %>
-
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
@@ -27,13 +26,19 @@
 <nav class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
+      <a class="navbar-brand" href="index.jsp">Adler</a>
+      <ul class="nav navbar-nav">
+          <li class="active"><a href="index.jsp">home</a></li>
+          <li><a href="ranking.jsp">ランキング</a></li>
+          <li><a href="">カテゴリ</a></li>
+          <li><a href="#">新作</a></li>
+      </ul>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="user.jsp">Adler</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
 <%
@@ -51,12 +56,12 @@
 <%		
 	}else{
 %>
-     <form action="Login_jg" method="post" class="navbar-form navbar-right">      
+     <form action="UserServlet" method="post" class="navbar-form navbar-right">      
         <div class="form-group">
-          <input type="text" name="mailAddress" placeholder="Email" class="form-control">
+          <input type="text" name="userId" placeholder="UserID" class="form-control">
         </div>
         <div class="form-group">
-          <input type="password" name="password" placeholder="Password" class="form-control">
+          <input type="password" name="passwd" placeholder="Password" class="form-control">
         </div>
         <button type="submit" class="btn btn-success">LogIn <span class="glyphicon glyphicon-log-in"></span></button>
 	 </form>
