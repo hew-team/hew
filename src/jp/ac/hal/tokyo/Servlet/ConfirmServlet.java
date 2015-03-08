@@ -1,11 +1,17 @@
 package jp.ac.hal.tokyo.Servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import jp.ac.hal.tokyo.Beans.ProductDataBean;
+import jp.ac.hal.tokyo.DAO.DAO;
 
 /**
  * Servlet implementation class ConfirmServlet
@@ -27,14 +33,17 @@ public class ConfirmServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("heloo");
+		request.setCharacterEncoding("UTF-8");
+		
+		DAO dao = new DAO();
+		ArrayList<ProductDataBean> ret = dao.getProductData();
+		
+		//転送
+		RequestDispatcher disp = request.getRequestDispatcher("confirm.jsp");
+		request.setAttribute("ret", ret);
+		//フォワード
+		disp.forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
 
 }

@@ -393,7 +393,7 @@ public class DAO {
 		
 		try{
 			ps = con.prepareStatement(sql);
-			ps.setString(1, UserId);			
+			ps.setString(1, UserId);
 			rs = ps.executeQuery();
 			if(rs.next()){
 				
@@ -432,5 +432,39 @@ public class DAO {
 			this.close();
 		}		
 		return count;
+	}
+	
+	public ArrayList<ProductDataBean> getProductData(){
+		sql = "select * from t_category, t_product, t_user where t_product.user_id = t_user.user_id and t_product.category_id = t_category.category_id and t_product.sale_start_day is null;";
+		ArrayList<ProductDataBean> ret = new ArrayList<ProductDataBean>();
+		this.getConnection();
+		
+		try{
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()){
+				ProductDataBean pdb = new ProductDataBean();
+				pdb.setUserId(rs.getString("l_user_id"));
+				pdb.setProductId(rs.getString("product_id"));
+				pdb.setProductName(rs.getString("product_name"));
+				pdb.setAuthor(rs.getString("user_name"));
+				pdb.setCategory(rs.getString("category_name"));
+				pdb.setProductText(rs.getString("product_text"));
+				pdb.setProductIcon(rs.getString("product_icon"));
+				pdb.setProductPoint(rs.getInt("product_point"));
+				pdb.setProductFileName(rs.getString("product_file"));
+				pdb.setProductSize(rs.getString("product_size"));
+				ret.add(pdb);
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			this.close();
+		}
+		return ret;
 	}
 }

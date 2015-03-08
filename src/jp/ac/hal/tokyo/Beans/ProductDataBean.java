@@ -12,6 +12,7 @@ public class ProductDataBean {
 	private String productIcon;
 	private int productPoint;
 	private ArrayList<String> productImage;
+	private String productId;
 	private String productText;
 	private String productSize;
 	private String productComp;
@@ -21,6 +22,12 @@ public class ProductDataBean {
 	private Date stopFlagDate;
 	
 
+	public String getProductId() {
+		return productId;
+	}
+	public void setProductId(String productId) {
+		this.productId = productId;
+	}
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}

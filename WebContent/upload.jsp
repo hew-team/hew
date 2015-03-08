@@ -266,6 +266,7 @@
 				contentType: false,
 				success: function(data) {
 					console.log('ファイルがアップロードされました。');
+					window.location.href = "successUpload.jsp";
 				}
 			});
 		}
