@@ -72,12 +72,12 @@
 		</div>
 	</div>
 <div id="index" class="col-xs-12">	
-	<div class="col-xs-12">
+	<div class="col-xs-12 padding-link margin-link">
 		<p class="news col-xs-1">SITE NEWS</p>
 		<p class="newsSite col-xs-11"><a href="#">14/12/32 サイトメンテナンスのお知らせ</a></p>	
 	</div>
 	
-	<div class="col-xs-12">
+	<div class="col-xs-12 bg-warning padding-link margin-link">
 		<p class="col-xs-12">オススメアプリ紹介</p>
 		<p class="col-xs-12">
 			<a href="#">記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル01</a><br/>
@@ -109,7 +109,7 @@
 			</div>
 			
 		</div>
-		<p class="moreRank offset-xs-1 col-xs-10 btn btn-info"><a href="#">もっと見る</a></p>	
+		<p class="moreRank col-xs-12 btn btn-info"><a href="#">もっと見る</a></p>	
 	</div>
 </div>
 

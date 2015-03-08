@@ -65,6 +65,8 @@
 <p class="pagenumber"><a href="#"><<</a> 1 <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">10</a> <a href="#">>></a></p>
 
 <div id="searchResult">
+	<ul class="link">
+
 <%
 
 int userLength = 15;
@@ -72,16 +74,19 @@ int userLength = 15;
 for(int i = 0 ; i < ret.size(); i++){
 	ProductDataBean pdb = ret.get(i);
 %>
-	<jsp:include page="ContentApp.jsp">
-		<jsp:param value="<%= "/upload/"+ pdb.getUserId() +"/"+pdb.getProductFileName() %>" name="url" />
-		<jsp:param value="<%= pdb.getProductIcon() %>" name="icon" />
-		<jsp:param value="<%= pdb.getProductName() %>" name="AppName" />
-		<jsp:param value="<%= pdb.getAuthor() %>" name="Author" />
-		<jsp:param value="<%= pdb.getProductPoint() %>" name="Point" />
-	</jsp:include>	
+<li class="clearfix">
+	<span class="img">
+		<img src="images/photo/01s.png" width="60" height="60" alt="" />
+	</span>
+	<span class="txt">アイテムNo.1<font>楽曲：03:25 20MB</font><font class="star">★★★</font></span>
+	<a href="#">
+		<img src="images/icon-download-alt.png" width="20" alt="" />
+	</a>
+</li>
 <%
 }
 %>
+</ul>
 </div>
 
 <p class="pagenumber"><a href="#"><<</a> 1 <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">10</a> <a href="#">>></a></p>
