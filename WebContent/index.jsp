@@ -12,7 +12,6 @@
     <!-- SLIDER - begin
     ============================================================== -->
     <div class="">
-
         <!-- Slider center - begin -->
         <div class="ct" data-tabs="
             isAutoRun-on
@@ -20,13 +19,11 @@
             wSlide-0.7
             pag-{ type: bullet, align: center, pos: bottom } swipe-{ isBody: true }">
         
-        
-            <a class="ct-img" href="imgs/slider/img_demo_default0.png">[image0]</a>
-            <a class="ct-img" href="imgs/slider/img_demo_default1.png">[image1]</a>
-            <a class="ct-img" href="imgs/slider/img_demo_default2.png">[image2]</a>
-            <a class="ct-img" href="imgs/slider/img_demo_default3.png">[image3]</a>
-            <a class="ct-img" href="imgs/slider/img_demo_default4.png">[image4]</a>
-            <a class="ct-img" href="imgs/slider/img_demo_default5.png">[image5]</a>
+            <a class="ct-img" href=""><img src="./images/img_demo_default1.png" width="940"></a>
+            <a class="ct-img" href=""><img src="./images/img_demo_default2.png" width="940"></a>
+            <a class="ct-img" href=""><img src="./images/img_demo_default3.png" width="940"></a>
+            <a class="ct-img" href=""><img src="./images/img_demo_default4.png" width="940"></a>
+            <a class="ct-img" href=""><img src="./images/img_demo_default5.png" width="940"></a>
         </div>
         <!-- Slider center - end -->
 
@@ -81,38 +78,48 @@
 	</div>
 	
 	<div class="col-xs-12">
-		<p class="title">オススメアプリ紹介</p>
-		<p class="kijiTitle">
+		<p class="col-xs-12">オススメアプリ紹介</p>
+		<p class="col-xs-12">
 			<a href="#">記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル01</a><br/>
 			<a href="#">記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル02</a>
 		</p>	
 	</div>
-	<div class="col-xs-12">
+	<div class="col-xs-12 bg-warning padding-link margin-link">
 		<p class="col-xs-12">●●Ranking</p>
 		<div id="indexRanking col-xs-12">
-			<div class="col-xs-5">
+			<div class="col-xs-6 bg-warning">
 				<p class="num col-xs-2">1位</p>
 				<p class="rankIcon col-xs-4"><a class="rankIcon" href="#"><img src="./images/app01.png" alt="icon"/></a></p>
 				<p class="shohin col-xs-6"><a href="#">●●●●●アプリ</a><br/>●●point</p>
 			</div>
-			<div class="col-xs-5">
+			<div class="col-xs-6 bg-warning">
 				<p class="num col-xs-2">2位</p>
 				<p class="rankIcon col-xs-4"><a class="rankIcon" href="#"><img src="./images/app01.png" alt="icon"/></a></p>
 				<p class="shohin col-xs-6"><a href="#">●●●●●アプリ</a><br/>●●point</p>
 			</div>
-			<div class="col-xs-5">
+			<div class="col-xs-6 bg-warning">
 				<p class="num col-xs-2">3位</p>
 				<p class="rankIcon col-xs-4"><a class="rankIcon" href="#"><img src="./images/app01.png" alt="icon"/></a></p>
 				<p class="shohin col-xs-6"><a href="#">●●●●●アプリ</a><br/>●●point</p>
 			</div>
-			<div class="col-xs-5">
+			<div class="col-xs-6 bg-warning">
 				<p class="num col-xs-2">4位</p>
 				<p class="rankIcon col-xs-4"><a class="rankIcon" href="#"><img src="./images/app01.png" alt="icon"/></a></p>
 				<p class="shohin col-xs-6"><a href="#">●●●●●アプリ</a><br/>●●point</p>
 			</div>
 			
 		</div>
-		<p class="moreRank col-xs-12 btn btn-info"><a href="#">もっと見る</a></p>	
+		<p class="moreRank offset-xs-1 col-xs-10 btn btn-info"><a href="#">もっと見る</a></p>	
 	</div>
 </div>
+
+    <!-- Script - begin
+    ============================================================== -->
+    <script src="./js/codetabs.js"></script> <!-- Codetabs Plugins -->
+
+    <script type="text/javascript">
+    </script>
+    <!-- SCRIPT - end
+    ============================================================== -->
+
 <jsp:include page="footer.jsp"></jsp:include>

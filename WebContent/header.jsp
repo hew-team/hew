@@ -13,11 +13,18 @@
 	<link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="./css/common.css" />
 <%
-	if(request.getParameter("Path") != null){
+if(request.getParameter("Path") != null){
+	%>
+	<link rel="stylesheet" type="text/css" href="./css/<%= request.getParameter("Path") %>.css" />
+	<%
+	if(request.getParameter("Path").equals("index")){
 		%>
-		<link rel="stylesheet" type="text/css" href="./css/<%= request.getParameter("Path") %>.css" />
-		<%
+	    <link rel="stylesheet" href="./css/codetabs.css">
+	    <link rel="stylesheet" href="./css/code.animate.css">
+	    <link rel="stylesheet" href="./css/bootstrap.code09.css">
+	    <%
 	}
+}
 %>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
