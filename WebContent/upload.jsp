@@ -20,6 +20,7 @@
 	<script type="text/javascript" src="js/upload.js"></script>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/common.css" />
 </head>
 <body>
 	<nav class="navbar navbar-inverse">
@@ -76,19 +77,20 @@
 	</nav>
 	<div class="container">
 		<h1>アプリアップロード</h1>
-		<div class="row">
-			<label for="productName" class="col-md-2">商品名：</label><input id="productName" type="text" name="name" class="col-md-2">
+		<p class="margin-10">全ての項目を入力し、アップロードするファイルを選択して下さい。</p>
+		<div class="row margin-10">
+			<label for="productName" class="col-md-2 col-md-offset-1">商品名：</label><input id="productName" type="text" name="name" class="col-md-3">
 		</div>
-		<div class="row">
-			<label for="textarea" class="col-md-2">商品説明：</label>
-			<textarea id="textarea" class="col-md-2" rows="4" cols="40" placeholder="商品説明をご記入下さい" name="description"></textarea>
+		<div class="row margin-10">
+			<label for="textarea" class="col-md-2 col-md-offset-1">商品説明：</label>
+			<textarea id="textarea" class="col-md-3" rows="4" cols="40" placeholder="商品説明をご記入下さい" name="description"></textarea>
 		</div>
-		<div class="row">
-			<label for="point" class="col-md-2">購入ポイント：</label><input type="text" name="point" id="point">
+		<div class="row margin-10">
+			<label for="point" class="col-md-2 col-md-offset-1">購入ポイント：</label><input type="text" name="point" id="point" class="col-md-3">
 		</div>
-		<div class="row">
-			<label for="select" class="col-md-2">カテゴリ：</label>
-			<select id="select" name="select" class="col-md-2">
+		<div class="row margin-10">
+			<label for="select" class="col-md-2 col-md-offset-1">カテゴリ：</label>
+			<select id="select" name="select" class="col-md-3">
 				<option>カテゴリ</option>
 				<option>ゲーム</option>
 				<option>ツール</option>
@@ -98,9 +100,9 @@
 				<option>-----</option>
 			</select>
 		</div>
-		<button id="apk">apk</button>
-		<button id="icon">icon</button>
-		<button id="button" >送信</button>
+		<button id="apk" class="btn">apk</button>
+		<button id="icon" class="btn">icon</button>
+		<button id="button" class="btn">送信</button>
 		<input type="hidden" name="msg" value="送信しました。">
 		
 		

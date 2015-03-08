@@ -40,7 +40,7 @@ if(request.getParameter("Path") != null){
       <a class="navbar-brand" href="index.jsp">Adler</a>
       <ul class="nav navbar-nav">
           <li class="active"><a href="index.jsp">ホーム</a></li>
-          <li><a href="ranking.jsp">アプリレビュー</a></li>
+          <li><a href="review.jsp">アプリレビュー</a></li>
           <li><a href="ranking.jsp">ランキング</a></li>
           <li><a href="">カテゴリ</a></li>
           <li><a href="#">新作</a></li>

@@ -3,15 +3,10 @@
 <%
 	//UTF-8を使う。
 	request.setCharacterEncoding("utf-8");
+	String getId = (String)session.getAttribute("userId");
 %>
 <jsp:include page="header.jsp">
-	<jsp:param value="ranking" name="PageName" />
+	<jsp:param value="review" name="PageName" />
 </jsp:include>
-
-<div class="container">
-	<h1>ランキング</h1>
-	
-</div>
-
 
 <jsp:include page="footer.jsp"></jsp:include>
