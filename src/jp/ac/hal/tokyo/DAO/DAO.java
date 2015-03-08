@@ -23,7 +23,9 @@ public class DAO {
 	Statement st;
 	//リザルトセットオブジェクト定義
 	ResultSet rs;
-	
+	//SQL文を格納する
+	String sql = "";
+
 	/**
 	 * コンストラクター
 	 */
@@ -201,6 +203,7 @@ public class DAO {
 	 */
 	public int uploadFile(ProductDataBean pdb){
 		String sql = "insert into t_product(user_id, category_id, product_name, product_point, product_text, product_size, product_file, upload_date, product_icon) values((select user_id from t_user where l_user_id = ?),?,?,?,?,?,?,?,?);";
+
 		int ret = 0;
 		this.getConnection();
 
@@ -211,8 +214,8 @@ public class DAO {
 	    		+ " \nサイズ = " + pdb.getProductSize()
 	    		+ " \nカテゴリ = " + pdb.getCategory()
 	    		+ " \nポイント = " + pdb.getProductPoint()
-	    		+ "\nアイコン= " + pdb.getProductIcon());
-		
+	    		+ "\nアイコン= " + pdb.getProductIcon()
+	    		+ " \nポイント = " + pdb.getProductPoint());		
 		//現在の日付を取得
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -249,9 +252,9 @@ public class DAO {
 		String sql = "";
 		ArrayList<ProductDataBean> ret = new ArrayList<ProductDataBean>();
 		
-		
-		if(text != null && !text.equals("") && category.equals("カテゴリ")){
+		if(text != null && category.equals("カテゴリ")){
 			sql = "select * from t_product, t_user where product_name like ? and t_user.user_id = t_product.user_id;";
+			System.out.println(sql);
 			
 			this.getConnection();
 			
@@ -269,6 +272,7 @@ public class DAO {
 					pdb.setAuthor(rs.getString("user_name"));
 					pdb.setProductPoint(rs.getInt("product_point"));
 					pdb.setProductFileName(rs.getString("product_file"));
+
 					ret.add(pdb);
 				}
 				
@@ -279,9 +283,10 @@ public class DAO {
 			}finally{
 				this.close();
 			}
-			
-		}else if(text != null && !text.equals("") && !category.equals("カテゴリ")){
-			sql = "select * from t_product, t_user where product_name like ? and category_id = (select category_id from t_category where category_name = ?) and t_user.user_id = t_product.user_id;";
+		
+		}else if(text != null && !category.equals("カテゴリ")){
+			sql = "select * from t_product where product_name like ? and category_id = (select category_id from t_category where category_name = ?) and t_user.user_id = t_product.user_id;";
+			System.out.println(sql);
 			
 			this.getConnection();
 			
@@ -300,6 +305,7 @@ public class DAO {
 					pdb.setAuthor(rs.getString("user_name"));
 					pdb.setProductPoint(rs.getInt("product_point"));
 					pdb.setProductFileName(rs.getString("product_file"));
+
 					ret.add(pdb);
 				}
 				
@@ -371,4 +377,60 @@ public class DAO {
 		return ret;
 	}
 
+
+	/**
+	 * 指定のユーザIDのユーザ情報を取るメソッド
+	 * @param UserId
+	 * @return ユーザー情報
+	 */
+	public UserDataBean selectReturnUser(String UserId){
+		UserDataBean udb = new UserDataBean();
+
+		sql = "select * from t_user where user_id =? ;";
+		System.out.println(sql);
+		
+		this.getConnection();
+		
+		try{
+			ps = con.prepareStatement(sql);
+			ps.setString(1, UserId);			
+			rs = ps.executeQuery();
+			if(rs.next()){
+				
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			this.close();
+		}
+		return udb;
+	}
+	
+	public int getCommentCount(String reviewId){
+		int count= 0;
+		sql = "select count(*) from t_comment where review_id=?;";
+		System.out.println(sql);
+		
+		this.getConnection();
+		
+		try{
+			ps = con.prepareStatement(sql);
+			ps.setString(1, reviewId);			
+			rs = ps.executeQuery();
+			if(rs.next()){
+				count = rs.getInt("count(*)");
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			this.close();
+		}		
+		return count;
+	}
 }

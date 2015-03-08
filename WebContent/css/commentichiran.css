@@ -1,0 +1,128 @@
+﻿@charset "UTF-8";
+
+
+
+/* MAIN ************************************************************/
+#review	{
+		width:960px;
+		background-color:transparent;
+		float:left;
+	}
+#review p[class="icon"]{
+		width:36px;
+		height:36px;
+		margin:0px 5px 0px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#review a[class="icon"]{
+		width:36px;
+		height:36px;
+		margin:0px 5px 0px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#reviewTitle{
+		width:736px;
+		padding:0px;
+		margin:0px 0px 0px 0px;
+		border:1px solid #000;
+		background-color:transparent;
+		float:left;
+	}
+#reviewTitle p{
+		padding:5px 10px 5px 10px;
+		margin:0px 0px 0px 0px;
+		font-size:20px;
+		line-height:1.2em;
+		font-weight:bold;
+		background-color:transparent;
+		float:left;
+	}
+#reviewStar	{
+		width:180px;
+		height:36px;
+		padding:0px;
+		margin:0px 0px 0px 0px;
+		background-color:transparent;
+		float:right;
+	}
+#reviewStar table{
+		height:30px;
+		margin:0px 0px 0px 0px;
+		border:1px solid #000;
+		border-collapse:collapse;
+		float:right;
+	}
+#reviewStar td[class="star"]{
+		width:30px;
+		height:30px;
+		padding:2px 2px 2px 2px;
+		margin:0px;
+		line-height:0em;
+		border:1px solid #000;
+		background-color:transparent;
+	}
+#comment{
+		width:960px;
+		padding:0px;
+		margin:0px;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#comment p[class="commentDate"]{
+		width:150px;
+		padding:0px 0px 0px 0px;
+		margin:20px 0px 0px 0px;
+		text-align:center;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 0px 1px;
+		background-color:transparent;
+		float:right;
+	}
+#comment img[class="userIcon"]{
+		width:20px;
+		height:20px;
+		margin:1px 5px 1px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#comment a[class="userIcon"]{
+		width:20px;
+		height:20px;
+		margin:1px 5px 1px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#comment p[class="commentUser"]{
+		padding:0px 10px 0px 10px;
+		margin:20px 0px 0px 0px;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 0px 1px;
+		background-color:transparent;
+		float:left;
+	}
+#comment p[class="comment"]{
+		width:948px;
+		padding:5px 5px 5px 5px;
+		margin:0px 0px 20px 0px;
+		border-style:solid;
+		border-color:#000;
+		border-width:1px 1px 1px 1px;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#comment form[class="irai"]{
+		width:180px;
+		height:24px;
+		padding:0px 0px 0px 0px;
+		margin:-45px 0px 20px 0px;
+		font-size:15px;
+		text-align:center;
+		background-color:transparent;
+		float:right;
+	}

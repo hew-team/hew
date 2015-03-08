@@ -1,0 +1,61 @@
+﻿@charset "UTF-8";
+
+
+
+/* MAIN ************************************************************/
+#makeReview{
+		width:960px;
+		padding:20px 0px 20px 0px;
+		margin:0px;
+		background-color:transparent;
+		float:left;
+		clear:both;
+	}
+#makeReviewStar	{
+		width:960px;
+		height:40px;
+		padding:0px;
+		margin:0px 0px 10px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#makeReviewStar table{
+		height:34px;
+		margin:0px 20px 0px 0px;
+		border:1px solid #000;
+		border-collapse:collapse;
+		float:left;
+	}
+#makeReviewStar td[class="star"]{
+		width:34px;
+		height:34px;
+		padding:2px 2px 2px 2px;
+		margin:0px;
+		line-height:0em;
+		border:1px solid #000;
+		background-color:transparent;
+	}
+#makeReviewStar input[class="submitstar"]{
+		width:150px;
+		height:35px;
+		font-size:15px;
+		float:left;
+	}
+#makeReview input[class="text"]{
+		width:954px;
+		height:25px;
+		font-size:15px;
+		float:left;
+	}
+#makeReview textarea{
+		width:954px;
+		height:300px;
+		font-size:15px;
+		float:left;
+	}
+#makeReview input[class="submit"]{
+		width:200px;
+		height:35px;
+		font-size:15px;
+		float:right;
+	}

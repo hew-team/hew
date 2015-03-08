@@ -1,0 +1,67 @@
+﻿@charset "UTF-8";
+
+
+
+/* MAIN ************************************************************/
+#shohin	{
+		width:960px;
+		background-color:transparent;
+		float:left;
+	}
+#shohin p[class="icon"]{
+		width:36px;
+		height:36px;
+		margin:0px 5px 0px 0px;
+		background-color:transparent;
+		float:left;
+	}
+#shohinName{
+		width:615px;
+		padding:0px;
+		margin:0px 0px 0px 0px;
+		border:1px solid #000;
+		background-color:transparent;
+		float:left;
+	}
+#shohinName p{
+		padding:5px 10px 5px 10px;
+		margin:0px 0px 0px 0px;
+		font-size:20px;
+		line-height:1.2em;
+		font-weight:bold;
+		background-color:transparent;
+		float:left;
+	}
+#shohinStar	{
+		width:300px;
+		height:36px;
+		padding:0px;
+		margin:0px 0px 0px 0px;
+		background-color:transparent;
+		float:right;
+	}
+#shohinStar table{
+		height:30px;
+		margin:0px 0px 0px 0px;
+		border:1px solid #000;
+		border-collapse:collapse;
+		float:right;
+	}
+#shohinStar td[class="star"]{
+		width:30px;
+		height:30px;
+		padding:2px 2px 2px 2px;
+		margin:0px;
+		line-height:0em;
+		border:1px solid #000;
+		background-color:transparent;
+	}
+#shohinStar td[class="total"]{
+		height:30px;
+		padding:2px 4px 2px 4px;
+		margin:0px;
+		text-align:right;
+		line-height:1em;
+		border:1px solid #000;
+		background-color:transparent;
+	}

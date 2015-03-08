@@ -2,7 +2,8 @@ package jp.ac.hal.tokyo.Servlet;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import jp.ac.hal.tokyo.Beans.ProductDataBean;
+import jp.ac.hal.tokyo.Beans.UserDataBean;
 import jp.ac.hal.tokyo.DAO.DAO;
 
 import org.apache.commons.fileupload.FileItem;
@@ -68,6 +70,7 @@ public class UploadFileServlet extends HttpServlet {
 			String point = "";
 			String select = "";
 			String icon = "";
+
 			long size = 0;
 
 
@@ -89,12 +92,13 @@ public class UploadFileServlet extends HttpServlet {
 				Iterator iterator = list.iterator();
 				while(iterator.hasNext()){
 					FileItem fItem = (FileItem)iterator.next();
-					//System.out.println(fItem);
 					//(6)ファイルデータの場合、if内を実行
 					if(!(fItem.isFormField())){
 						//(7)ファイルデータのファイル名(PATH名含む)を取得
 						fileName = fItem.getName();
 						if((fileName != null) && (!fileName.equals(""))){
+							//(8)PATH名を除くファイル名のみを取得
+							fileName=(new File(fileName)).getName();
 							File file = new File(path + "/" + userId);
 							//ユーザ事のフォルダ作成
 							file.mkdir();
@@ -141,6 +145,7 @@ public class UploadFileServlet extends HttpServlet {
 				pdb.setProductPoint(Integer.parseInt(point));
 				pdb.setCategory(select);
 				pdb.setProductIcon(icon);
+
 			}catch(NumberFormatException e){
 				e.printStackTrace();
 				msg = "数値以外が入力されました。";

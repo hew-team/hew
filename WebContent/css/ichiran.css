@@ -1,0 +1,44 @@
+﻿@charset "UTF-8";
+
+
+
+/* MAIN ************************************************************/
+#title	{
+		width:958px;
+		padding:0px 0px 0px 0px;
+		margin:0px;
+		font-weight:bold;
+		text-align:center;
+		border:1px solid #000;
+		background-color:lightblue;
+		float:left;
+	}
+#searchResult{
+		width:960px;
+		padding:10px 0px 10px 0px;
+		margin:0px;
+		background-color:transparent;
+		float:left;
+	}
+#searchResult ul{
+		width:130px;
+		padding:5px;
+		margin:10px;
+		list-style:none;
+		background-color:transparent;
+		float:left;
+	}
+#searchResult li{
+		text-align:center;
+		background-color:transparent;
+	}
+#searchResult li[class="icon"]{
+		width:130px;
+		height:130px;
+		background-color:transparent;
+	}
+#searchResult a[class="icon"]{
+		width:130px;
+		height:130px;
+		display:inline-block;
+	}

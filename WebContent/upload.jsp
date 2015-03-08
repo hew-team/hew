@@ -77,6 +77,7 @@
 				e.preventDefault();
 				if(files && checkName() && checkDesc() && checkPoint() && checkCategory()){
 					uploadFiles(fd);
+
 				}else{
 					alert('入力項目を確認して下さい');
 				}
@@ -116,6 +117,7 @@
 			$('#icon').click(function(){
 				$('#dialog2').dialog('open');
 			});
+
 		});
 		
 		function checkName(){
@@ -158,6 +160,7 @@
 		  ファイルをドロップした時の処理
 		=================================================*/
 		$('#drag-area1').bind('drop', function(e){
+
 			// デフォルトの挙動を停止
 			e.preventDefault();
 			// ファイル情報を取得
@@ -176,7 +179,7 @@
 			}
 			
 			console.log(fd);
-			
+		
 		}).bind('dragenter', function(){
 			// デフォルトの挙動を停止
 			return false;
@@ -253,6 +256,7 @@
 		  アップロード処理
 		=================================================*/
 		function uploadFiles(fd) {
+
 			//フォームの値をFormDataオブジェクトに追加
 			fd.append('name', $('input[name="name"]').val());
 			fd.append('description', $('textarea[name="description"]').val());
