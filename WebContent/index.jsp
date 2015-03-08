@@ -9,31 +9,69 @@
 	<jsp:param value="index" name="Path" />
 </jsp:include>
 
+    <!-- SLIDER - begin
+    ============================================================== -->
+    <div class="">
+
+        <!-- Slider center - begin -->
+        <div class="ct" data-tabs="
+            isAutoRun-on
+            fx-line speed-800
+            wSlide-0.7
+            pag-{ type: bullet, align: center, pos: bottom } swipe-{ isBody: true }">
+        
+        
+            <a class="ct-img" href="imgs/slider/img_demo_default0.png">[image0]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default1.png">[image1]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default2.png">[image2]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default3.png">[image3]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default4.png">[image4]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default5.png">[image5]</a>
+        </div>
+        <!-- Slider center - end -->
+
+    </div>
+    <!-- SLIDER - end
+    ============================================================== -->
+
+
 	<div class="col-xs-8">
 		<div class="newsbox1">
-			<div id="news1">
-				<a href="">
-					<img src="./images/001.png" alt="slider1">
-				</a>
-			</div><!--/news1  -->
+				<div id="news1">
+					<a href="">
+						<img src="./images/001.png" alt="slider1">
+					</a>
+				</div><!--/news1  -->
+
+				<div id="news2">
+					<a href="">
+						<img src="./images/002.png" alt="slider2">
+					</a>
+				</div><!--/news2  -->
+
+				<div id="news3">
+					<a href="">
+						<img src="./images/003.jpg" alt="slider3">
+					</a>
+				</div><!--/news3  -->
 		</div><!-- /newsbox -->
-	</div><!-- /news -->
+	</div>
 	
 	<div class="col-xs-4">
 		<p class="newApp">新着アプリ</p>
 		<div id="newShohin">
-			<p class="col-xs-3"><img src="./images/app01.png" alt="icon"/></p>	
-			<p class="col-xs-3"><img src="./images/app02.png" alt="icon"/></p>
-			<p class="col-xs-3"><img src="./images/app03.png" alt="icon"/></p>	
-			<p class="col-xs-3"><img src="./images/app04.png" alt="icon"/></p>
-			<p class="col-xs-3"><img src="./images/app05.png" alt="icon"/></p>
-			<p class="col-xs-3"><img src="./images/app06.png" alt="icon"/></p>
-			<p class="col-xs-3"><img src="./images/app07.png" alt="icon"/></p>
-			<p class="col-xs-3"><img src="./images/app08.png" alt="icon"/></p>
-			<p class="col-xs-3"><img src="./images/app09.png" alt="icon"/></p>
-			<p class="col-xs-3"><img src="./images/app10.png" alt="icon"/></p>
-			<p class="col-xs-3"><img src="./images/app11.png" alt="icon"/></p>
-			<p class="col-xs-3"><img src="./images/app12.png" alt="icon"/></p>
+			<p class="col-xs-3"><img src="./images/app01.png" class="img-responsive" alt="icon"/></p>	
+			<p class="col-xs-3"><img src="./images/app02.png" class="img-responsive" alt="icon"/></p>
+			<p class="col-xs-3"><img src="./images/app03.png" class="img-responsive" alt="icon"/></p>	
+			<p class="col-xs-3"><img src="./images/app04.png" class="img-responsive" alt="icon"/></p>
+			<p class="col-xs-3"><img src="./images/app05.png" class="img-responsive" alt="icon"/></p>
+			<p class="col-xs-3"><img src="./images/app06.png" class="img-responsive" alt="icon"/></p>
+			<p class="col-xs-3"><img src="./images/app07.png" class="img-responsive" alt="icon"/></p>
+			<p class="col-xs-3"><img src="./images/app08.png" class="img-responsive" alt="icon"/></p>
+			<p class="col-xs-3"><img src="./images/app09.png" class="img-responsive" alt="icon"/></p>
+			<p class="col-xs-3"><img src="./images/app10.png" class="img-responsive" alt="icon"/></p>
+			<p class="col-xs-3"><img src="./images/app11.png" class="img-responsive" alt="icon"/></p>
+			<p class="col-xs-3"><img src="./images/app12.png" class="img-responsive" alt="icon"/></p>
 		</div>
 	</div>
 <div id="index" class="col-xs-12">	
