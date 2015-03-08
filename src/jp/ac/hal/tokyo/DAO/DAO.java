@@ -200,7 +200,7 @@ public class DAO {
 	 * @return int (-1:異常 1:成功)
 	 */
 	public int uploadFile(ProductDataBean pdb){
-		String sql = "insert into t_product(user_id, category_id, product_name, product_point, product_text, product_size, product_file, upload_date) values((select user_id from t_user where l_user_id = ?),?,?,?,?,?,?,?);";
+		String sql = "insert into t_product(user_id, category_id, product_name, product_point, product_text, product_size, product_file, upload_date, product_icon) values((select user_id from t_user where l_user_id = ?),?,?,?,?,?,?,?,?);";
 		int ret = 0;
 		this.getConnection();
 
@@ -210,7 +210,8 @@ public class DAO {
 	    		+ " \nファイル名 = " + pdb.getProductFileName()
 	    		+ " \nサイズ = " + pdb.getProductSize()
 	    		+ " \nカテゴリ = " + pdb.getCategory()
-	    		+ " \nポイント = " + pdb.getProductPoint());
+	    		+ " \nポイント = " + pdb.getProductPoint()
+	    		+ "\nアイコン= " + pdb.getProductIcon());
 		
 		//現在の日付を取得
 		Date date = new Date();
@@ -227,6 +228,7 @@ public class DAO {
 			ps.setString(6, pdb.getProductSize());
 			ps.setString(7, pdb.getProductFileName());
 			ps.setString(8, sdf.format(date));
+			ps.setString(9, pdb.getProductIcon());
 			
 			ret = ps.executeUpdate();
 			

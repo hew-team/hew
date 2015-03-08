@@ -17,6 +17,8 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="js/upload.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 </head>
 <body>
 	ようこそ<%= id %>さん。<br>
@@ -42,24 +44,68 @@
 		<option>-----</option>
 	</select>
 	<br>
-	<div id="drag-area" style="width:400px;height:200px;border:dashed 1px #333;">
-		<p>アップロードするファイルをドロップ</p>
-	</div>
-	<div id="fileNameArea"></div>
+	<button id="apk">apk</button>
+	<button id="icon">icon</button>
 	<button id="button" >送信</button>
 	<input type="hidden" name="msg" value="送信しました。">
+	
+	
+	<div id="dialog1">
+		<div id="drag-area1" style="width:100%;height:200px;border:dashed 1px #333;">
+			<p>アップロードするファイルをドロップ</p>
+		</div>
+		<div id="fileNameArea1"></div>
+	</div>
+	<div id="dialog2">
+		<div id="drag-area2" style="width:100%;height:200px;border:dashed 1px #333;">
+			<p>アップロードするファイルをドロップ</p>
+		</div>
+		<div id="fileNameArea2"></div>
+	</div>
 	<script type="text/javascript">
 	$(function(){
+		
 		var files = null;
+		// FormDataオブジェクトを用意
+		var fd = new FormData();
+		
 		$('document').ready(function(){
 			$('#button').click(function(e){
 				e.preventDefault();
 				if(files && checkName() && checkDesc() && checkPoint() && checkCategory()){
-					uploadFiles(files);
+					uploadFiles(fd);
 				}else{
 					alert('入力項目を確認して下さい');
 				}
 			});
+				$('#dialog1').dialog({
+					  autoOpen: false,
+					  title: 'apk',
+					  closeOnEscape: false,
+					  modal: true,
+					  buttons: {
+					    "OK": function(){
+					      $(this).dialog('close');
+					    }
+					  }
+					});
+				$('#dialog2').dialog({
+					  autoOpen: false,
+					  title: 'icon',
+					  closeOnEscape: false,
+					  modal: true,
+					  buttons: {
+					    "OK": function(){
+					      $(this).dialog('close');
+					    }
+					  }
+					});
+				$('#apk').click(function(){
+					$('#dialog1').dialog('open');
+				});
+				$('#icon').click(function(){
+					$('#dialog2').dialog('open');
+				});
 		});
 		
 		function checkName(){
@@ -92,15 +138,53 @@
 		/*================================================
 		  ファイルをドロップした時の処理
 		=================================================*/
-		$('#drag-area').bind('drop', function(e){
+		$('#drag-area1').bind('drop', function(e){
 			// デフォルトの挙動を停止
 			e.preventDefault();
 			// ファイル情報を取得
 			files = e.originalEvent.dataTransfer.files;
 			for(var i=0; i<files.length; i++){
+				//fileNameAreaにファイル情報を表示
 				var elm = $('<p>' + files[i].name + " " + files[i].size + "byte" + '</p>');
-				$('#fileNameArea').append(elm);
+				$('#fileNameArea1').append(elm);
 			}
+
+			// ファイルの個数を取得
+			var filesLength = files.length;
+			// ファイル情報を追加
+			for (var i = 0; i < filesLength; i++) {
+				fd.append("files[]", files[i]);
+			}
+			
+			console.log(fd);
+			
+		}).bind('dragenter', function(){
+			// デフォルトの挙動を停止
+			return false;
+		}).bind('dragover', function(){
+			// デフォルトの挙動を停止
+			return false;
+		});
+		$('#drag-area2').bind('drop', function(e){
+			// デフォルトの挙動を停止
+			e.preventDefault();
+			// ファイル情報を取得
+			files = e.originalEvent.dataTransfer.files;
+			for(var i=0; i<files.length; i++){
+				files[i].name = ('icon_' + files[i].name);
+				//fileNameAreaにファイル情報を表示s
+				var elm = $('<p>' + files[i].name + " " + files[i].size + "byte" + '</p>');
+				$('#fileNameArea2').append(elm);
+				console.log(files[i].name);
+			}
+
+			// ファイルの個数を取得
+			var filesLength = files.length;
+			// ファイル情報を追加
+			for (var i = 0; i < filesLength; i++) {
+				fd.append("files[]", files[i]);
+			}
+			console.log(fd);
 			
 		}).bind('dragenter', function(){
 			// デフォルトの挙動を停止
@@ -113,15 +197,7 @@
 		/*================================================
 		  アップロード処理
 		=================================================*/
-		function uploadFiles(files) {
-			// FormDataオブジェクトを用意
-			var fd = new FormData();
-			// ファイルの個数を取得
-			var filesLength = files.length;
-			// ファイル情報を追加
-			for (var i = 0; i < filesLength; i++) {
-				fd.append("files[]", files[i]);
-			}
+		function uploadFiles(fd) {
 			//フォームの値をFormDataオブジェクトに追加
 			fd.append('name', $('input[name="name"]').val());
 			fd.append('description', $('textarea[name="description"]').val());
