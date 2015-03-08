@@ -39,14 +39,14 @@
 		background-color:transparent;
 	}
 #searchRe{
-		width:958px;
-		padding:0px 0px 10px 0px;
-		margin:10px 0px 0px 0px;
-		border:1px solid #000;
-		background-color:transparent;
-		float:left;
-		clear:both;
-	}
+		width: 960px;
+		padding: 10px 0px;
+		margin: 10px 0px;
+		background-color: transparent;
+		clear: both;
+		overflow: auto;
+}
+
 #searchRe p[class="title"]{
 		width:958px;
 		padding:3px 0px 0px 0px;

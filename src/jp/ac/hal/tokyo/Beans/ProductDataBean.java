@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class ProductDataBean {
 	
+	private String productId;
 	private String userId;
 	private String category;
 	private String author;
@@ -21,6 +22,16 @@ public class ProductDataBean {
 	private Date stopFlagDate;
 	
 
+	
+	
+	
+	
+	public String getProductId() {
+		return productId;
+	}
+	public void setProductId(String productId) {
+		this.productId = productId;
+	}
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}

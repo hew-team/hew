@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.ArrayList,jp.ac.hal.tokyo.Beans.*"%>
 <%
-
-	String id = (String)session.getAttribute("userId");
-
-	if(id == null){//転送
 		
 	final String REFPAGE1 = "http://localhost:8080/hew/search.jsp";
 	final String REFPAGE2 = "http://localhost:8080/hew/searchServlet";
@@ -31,15 +27,12 @@
 	}
 
 	ArrayList<ProductDataBean> ret = (ArrayList<ProductDataBean>)request.getAttribute("ret");
-%>
-
-<%
 	//UTF-8を使う。
 	request.setCharacterEncoding("utf-8");
 %>
 <jsp:include page="header.jsp">
 	<jsp:param value="検索結果" name="PageName" />
-	<jsp:param value="markusernew" name="Path" />
+	<jsp:param value="search" name="Path" />
 </jsp:include>
 
 <div id="search">
@@ -77,7 +70,9 @@ for(int i = 0 ; i < ret.size(); i++){
 	ProductDataBean pdb = ret.get(i);
 %>
 	<jsp:include page="ContentApp.jsp">
-		<jsp:param value="<%= "//upload//"+ pdb.getUserId() +"//"+pdb.getProductFileName() %>" name="url" />
+		<jsp:param value="<%= pdb.getProductFileName() %>" name="filename" />
+		<jsp:param value="<%= pdb.getUserId() %>" name="userId" />
+		<jsp:param value="<%= pdb.getProductId() %>" name="productId" />
 		<jsp:param value="<%= pdb.getProductIcon() %>" name="icon" />
 		<jsp:param value="<%= pdb.getProductName() %>" name="AppName" />
 		<jsp:param value="<%= pdb.getAuthor() %>" name="Author" />
@@ -172,7 +167,16 @@ for(int i = 0 ; i < ret.size(); i++){
 	<input type="submit" value="再検索する" class="search"/></p>
 	</form>
 </div>
+<script>
+function modal(pi){
+	alert('hey'+ pi);
+}	
+</script>
+<div id="dialog1">
+	<div id="drag-area1" style="width:100%;height:80%;border:dashed 1px #333;">
+		<p></p>
+	</div>
+	<div id="fileNameArea1"></div>
+</div>
 
-
-</body>
-</html>
+<jsp:include page="footer.jsp"></jsp:include>
