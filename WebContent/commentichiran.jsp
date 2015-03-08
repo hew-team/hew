@@ -1,31 +1,40 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="jp.ac.hal.tokyo.DAO.*"%>
 <%
 	//UTF-8を使う。
 	request.setCharacterEncoding("utf-8");
+
+	String reviewId = request.getParameter("reviewId");
+
+	DAO d = new DAO();
+	
 %>
+<jsp:include page="header.jsp">
+	<jsp:param value="コメント一覧" name="PageName" />
+	<jsp:param value="commentichiran" name="Path" />
+</jsp:include>
+
 <div id="review">
+
 	<p class="icon">
 		<a class="icon" href="#"><img src="./images/userImage.png"
 			alt="icon" /></a>
 	</p>
+
 	<div id="reviewTitle">
-		<p>レビュータイトル</p>
-	</div>
-	<div id="reviewStar">
-		<table>
-			<tr>
-				<td class="star"><img src="./images/star.png" alt="star" /></td>
-				<td class="star"><img src="./images/star.png" alt="star" /></td>
-				<td class="star"><img src="./images/star.png" alt="star" /></td>
-				<td class="star"><img src="./images/star01.png" alt="star" /></td>
-				<td class="star"><img src="./images/star01.png" alt="star" /></td>
-		</table>
+		<p><%= reviewId %></p>
 	</div>
 
+	<div id="reviewStar">
+		<div class="star"><img src="./images/star.png" alt="star" /></div>
+		<div class="star"><img src="./images/star.png" alt="star" /></div>
+		<div class="star"><img src="./images/star.png" alt="star" /></div>
+		<div class="star"><img src="./images/star01.png" alt="star" /></div>
+		<div class="star"><img src="./images/star01.png" alt="star" /></div>
+	</div>
 
 	<div id="sort">
-		<p class="result">全000件</p>
+		<p class="result">全<%= d.getCommentCount(reviewId) %>件</p>
 		<p>
 		<form action="#" method="post">
 			<select name="sort">
@@ -48,50 +57,25 @@
 
 
 	<div id="comment">
-		<jsp:include page="ContentApp.jsp">
-			<jsp:param value="2015/03/06 22:10" name="AppDate" />
-			<jsp:param value="http://www.google.co.jp" name="url" />
-			<jsp:param value="sample.png" name="icon" />
-			<jsp:param value="Line" name="AppName" />
-			<jsp:param value="作者名" name="Author" />
-			<jsp:param value="100" name="Point" />
-		</jsp:include>
-		
-		<p class="commentDate">0000/00/00 00:00</p>
-		<p class="commentUser">
-			<a class="userIcon" href="#"><img class="userIcon"
-				src="./images/userImage.png" alt="icon" /></a><a href="#">書いたユーザ名</a>
-		</p>
-		<p class="comment">コメント本文冒頭ううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううう</p>
-		<p>
-		<form class="irai" action="#" method="post">
-			<input type="submit" value="このコメントに対する削除依頼" />
-		</form>
-		</p>
+<%
 
-		<p class="commentDate">0000/00/00 00:00</p>
-		<p class="commentUser">
-			<a class="userIcon" href="#"><img class="userIcon"
-				src="./images/userImage.png" alt="icon" /></a><a href="#">書いたユーザ名</a>
-		</p>
-		<p class="comment">コメント本文冒頭ううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううう</p>
-		<p>
-		<form class="irai" action="#" method="post">
-			<input type="submit" value="このコメントに対する削除依頼" />
-		</form>
-		</p>
+int cont = 5;
 
-		<p class="commentDate">0000/00/00 00:00</p>
-		<p class="commentUser">
-			<a class="userIcon" href="#"><img class="userIcon"
-				src="./images/userImage.png" alt="icon" /></a><a href="#">書いたユーザ名</a>
-		</p>
-		<p class="comment">コメント本文冒頭ううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううう</p>
-		<p>
-		<form class="irai" action="#" method="post">
-			<input type="submit" value="このコメントに対する削除依頼" />
-		</form>
-		</p>
+for(int i = 0;i < cont ; i++){
+	%>
+	
+	<jsp:include page="ContentComment.jsp">
+		<jsp:param value="<%= i %>" name="CommentId"/>
+		<jsp:param value="aadachi" name="UserId"/>
+		<jsp:param value="足立厚地" name="UserName"/>
+		<jsp:param value="2015/03/09 11:00:30" name="CommentTime"/>
+	</jsp:include>
+	
+	<%
+}
+
+%>
+
 	</div>
 
 	<p class="pagenumber">
@@ -101,3 +85,4 @@
 	</p>
 
 </div>
+<jsp:include page="footer.jsp"></jsp:include>

@@ -23,6 +23,10 @@ public class DAO {
 	Statement st;
 	//リザルトセットオブジェクト定義
 	ResultSet rs;
+
+	//SQL文を格納する
+	String sql = "";
+
 	
 	/**
 	 * コンストラクター
@@ -310,4 +314,59 @@ public class DAO {
 		return ret;
 	}
 
+	/**
+	 * 指定のユーザIDのユーザ情報を取るメソッド
+	 * @param UserId
+	 * @return ユーザー情報
+	 */
+	public UserDataBean selectReturnUser(String UserId){
+		UserDataBean udb = new UserDataBean();
+
+		sql = "select * from t_user where user_id =? ;";
+		System.out.println(sql);
+		
+		this.getConnection();
+		
+		try{
+			ps = con.prepareStatement(sql);
+			ps.setString(1, UserId);			
+			rs = ps.executeQuery();
+			if(rs.next()){
+				
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			this.close();
+		}
+		return udb;
+	}
+	
+	public int getCommentCount(String reviewId){
+		int count= 0;
+		sql = "select count(*) from t_comment where review_id=?;";
+		System.out.println(sql);
+		
+		this.getConnection();
+		
+		try{
+			ps = con.prepareStatement(sql);
+			ps.setString(1, reviewId);			
+			rs = ps.executeQuery();
+			if(rs.next()){
+				count = rs.getInt("count(*)");
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			this.close();
+		}		
+		return count;
+	}
 }
