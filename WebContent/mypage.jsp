@@ -1,9 +1,8 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-
-
-
+	//UTF-8を使う。
+	request.setCharacterEncoding("utf-8");
 %>
 <jsp:include page="header.jsp">
 	<jsp:param value="マイページ" name="PageName" />

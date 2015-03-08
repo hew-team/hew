@@ -30,8 +30,6 @@
 	ArrayList<ProductDataBean> ret = (ArrayList<ProductDataBean>)request.getAttribute("ret");
 %>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <%
 	//UTF-8を使う。
 	request.setCharacterEncoding("utf-8");
@@ -73,14 +71,14 @@
 int userLength = 15;
 
 for(int i = 0 ; i < ret.size(); i++){
+	ProductDataBean pdb = ret.get(i);
 %>
 	<jsp:include page="ContentApp.jsp">
-		<jsp:param value="2015/03/06 22:10" name="AppDate" />
-		<jsp:param value="http://www.google.co.jp" name="url" />
-		<jsp:param value="sample.png" name="icon" />
-		<jsp:param value="Line" name="AppName" />
-		<jsp:param value="作者名" name="Author" />
-		<jsp:param value="100" name="Point" />
+		<jsp:param value="<%= "//upload//"+ pdb.getUserId() +"//"+pdb.getProductFileName() %>" name="url" />
+		<jsp:param value="<%= pdb.getProductIcon() %>" name="icon" />
+		<jsp:param value="<%= pdb.getProductName() %>" name="AppName" />
+		<jsp:param value="<%= pdb.getAuthor() %>" name="Author" />
+		<jsp:param value="<%= pdb.getProductPoint() %>" name="Point" />
 	</jsp:include>	
 <%
 }
