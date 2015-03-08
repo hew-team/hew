@@ -21,7 +21,6 @@ if(request.getParameter("Path") != null){
 		%>
 	    <link rel="stylesheet" href="./css/codetabs.css">
 	    <link rel="stylesheet" href="./css/code.animate.css">
-	    <link rel="stylesheet" href="./css/bootstrap.code09.css">
 	    <%
 	}
 }

@@ -106,3 +106,142 @@
 		font-size:15px;
 		float:right;
 	}
+
+body{
+font: 14px/1.6 "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",Verdana,Arial,sans-serif;
+margin:0;
+padding: 10px 30px;
+background: #eee;
+}
+img{
+outline:none;
+border-style:none;
+}
+h1{
+color: #3e84b5;
+font-size: 21px;
+padding-left:30px;
+}
+h3{
+margin:0;
+padding-top:10px;
+padding-left:30px;
+text-align:center;
+color:#555;
+font-size:14px;
+font-weight:bold;
+}
+p{
+padding-left:30px;
+}
+a{
+outline:none;
+border-style:none;
+}
+.wrapper{
+width:480px;
+margin:0 auto;
+padding:10px 20px;
+}
+.clearfix:after{
+content: "."; 
+display: block; 
+height: 0; 
+font-size:0;	
+clear: both; 
+visibility:hidden;
+}
+.wrapper li { 
+display: inline;
+margin: 0; 
+}
+
+
+/* ボタンのスタイル */
+.link{
+border-left:1px solid #cecece;
+border-right:1px solid #cecece;
+border-top:1px solid #cecece;
+padding:0;
+}
+.link li{
+display: block;
+width: 100%;
+background:#f5f5f5;
+border-bottom:1px solid #cecece;
+font-weight:bold;
+color:#4d4d4d;
+text-decoration:none;
+text-align:left;
+text-shadow: 0px 1px 0px #fff;
+behavior: url(PIE.htc);
+}
+.link li+li{
+border-top:1px solid #fff;
+}
+.link span.img{
+display:block;
+float:left;
+padding:10px 10px 5px;
+}
+.link span.txt{
+display:block;
+width:60%;
+float:left;
+padding:10px 0 5px;
+}
+
+.link font{
+display:block;
+font-weight:normal;
+color:#828282;
+font-size:12px;
+}
+.link font.star{
+color:#ff770b;
+}
+
+.link a{
+display: inline-block;
+text-decoration:none;
+position:relative;
+top:25px;
+right:10px;
+float:right;
+width:50px;
+font-size:18px;
+line-height:1.0;
+padding:2px 0;
+color:#fff;
+text-shadow:none;
+text-align:center;
+background:#c6c6c6;
+background: -webkit-gradient(linear, left top, left bottom, from(#c6c6c6), to(#a0a0a0));
+background: -moz-linear-gradient(top,  #c6c6c6,  #a0a0a0);
+background: -o-linear-gradient(top,  #c6c6c6,  #a0a0a0);
+background: -ms-linear-gradient(top,  #c6c6c6,  #a0a0a0);
+background: linear-gradient(top,  #c6c6c6,  #a0a0a0);
+-pie-background: linear-gradient(top,  #c6c6c6,  #a0a0a0);
+border:1px solid #9b9b9b;
+-webkit-border-radius: 5px; 
+-moz-border-radius: 5px; 
+border-radius: 5px;
+-webkit-box-shadow: 0px 1px 0px #fff;
+-moz-box-shadow: 0px 1px 0px #fff;
+box-shadow: 0px 1px 0px #fff;
+behavior: url(PIE.htc);
+}
+
+/* マウスオーバー時 */
+.link a.on,
+.link a:hover{
+text-shadow: none;
+background:#eaeaea;
+background: -webkit-gradient(linear, left top, left bottom, from(#eaeaea), to(#bbb));
+background: -moz-linear-gradient(top,  #eaeaea,  #bbb);
+background: -o-linear-gradient(top,  #eaeaea,  #bbb);
+background: -ms-linear-gradient(top,  #eaeaea,  #bbb);
+background: linear-gradient(top,  #eaeaea,  #bbb);
+-pie-background: linear-gradient(top,  #eaeaea,  #bbb);
+behavior: url(PIE.htc);
+}
