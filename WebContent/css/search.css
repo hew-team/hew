@@ -111,7 +111,6 @@ body{
 font: 14px/1.6 "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",Verdana,Arial,sans-serif;
 margin:0;
 padding: 10px 30px;
-background: #eee;
 }
 img{
 outline:none;
@@ -167,7 +166,6 @@ padding:0;
 .link li{
 display: block;
 width: 100%;
-background:#f5f5f5;
 border-bottom:1px solid #cecece;
 font-weight:bold;
 color:#4d4d4d;
