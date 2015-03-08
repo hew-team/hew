@@ -30,6 +30,7 @@
       <a class="navbar-brand" href="index.jsp">Adler</a>
       <ul class="nav navbar-nav">
           <li class="active"><a href="index.jsp">home</a></li>
+          <li><a href="ranking.jsp">ランキング</a></li>
           <li><a href="">カテゴリ</a></li>
           <li><a href="#">新作</a></li>
       </ul>
@@ -56,12 +57,12 @@
 <%		
 	}else{
 %>
-     <form action="Login_jg" method="post" class="navbar-form navbar-right">      
+     <form action="UserServlet" method="post" class="navbar-form navbar-right">      
         <div class="form-group">
-          <input type="text" name="mailAddress" placeholder="Email" class="form-control">
+          <input type="text" name="userId" placeholder="UserID" class="form-control">
         </div>
         <div class="form-group">
-          <input type="password" name="password" placeholder="Password" class="form-control">
+          <input type="password" name="passwd" placeholder="Password" class="form-control">
         </div>
         <button type="submit" class="btn btn-success">LogIn <span class="glyphicon glyphicon-log-in"></span></button>
 	 </form>
