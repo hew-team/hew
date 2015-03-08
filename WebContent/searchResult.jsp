@@ -30,15 +30,12 @@
 	}
 
 	ArrayList<ProductDataBean> ret = (ArrayList<ProductDataBean>)request.getAttribute("ret");
-%>
-
-<%
 	//UTF-8を使う。
 	request.setCharacterEncoding("utf-8");
 %>
 <jsp:include page="header.jsp">
 	<jsp:param value="検索結果" name="PageName" />
-	<jsp:param value="markusernew" name="Path" />
+	<jsp:param value="search" name="Path" />
 </jsp:include>
 
 <div id="search">
@@ -171,7 +168,16 @@ for(int i = 0 ; i < ret.size(); i++){
 	<input type="submit" value="再検索する" class="search"/></p>
 	</form>
 </div>
+<script>
+function modal(pi){
+	alert('hey'+ pi);
+}	
+</script>
+<div id="dialog1">
+	<div id="drag-area1" style="width:100%;height:80%;border:dashed 1px #333;">
+		<p></p>
+	</div>
+	<div id="fileNameArea1"></div>
+</div>
 
-
-</body>
-</html>
+<jsp:include page="footer.jsp"></jsp:include>

@@ -19,6 +19,7 @@ if(request.getParameter("CommentCon") != null && !request.getParameter("CommentC
 	post = request.getParameter("CommentCon");
 	String str = "";
 	if(post.length() > 4){
+		
 		str = post.substring(0, 3);
 	}
 	
@@ -54,12 +55,4 @@ if(request.getParameter("CommentCon") != null && !request.getParameter("CommentC
 	<div class="xs-container">
 		<div class="col-xs-10 col-xs-offset-1 xs-post"><%= post %></div>
 	</div>
-	
-	<div class="col-xs-12 btn-group">
-		<div class="btn col-xs-3"><span class="glyphicon glyphicon-heart"></span></div>
-		<div class="btn col-xs-3"><span class="glyphicon glyphicon-cutlery"></span></div>
-		<div class="btn col-xs-3"><span class="glyphicon glyphicon-map-marker"></span></div>
-		<div class="btn col-xs-3"><span class="glyphicon glyphicon-comment"></span></div>
-	</div>
-
 </div>

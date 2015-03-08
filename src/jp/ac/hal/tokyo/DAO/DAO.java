@@ -270,6 +270,7 @@ public class DAO {
 					pdb.setUserId(rs.getString("l_user_id"));
 					pdb.setProductName(rs.getString("product_name"));
 					pdb.setAuthor(rs.getString("user_name"));
+					pdb.setProductId(rs.getString("product_id"));
 					pdb.setProductPoint(rs.getInt("product_point"));
 					pdb.setProductFileName(rs.getString("product_file"));
 

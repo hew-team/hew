@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class ProductDataBean {
 	
+	private String productId;
 	private String userId;
 	private String category;
 	private String author;
@@ -12,7 +13,6 @@ public class ProductDataBean {
 	private String productIcon;
 	private int productPoint;
 	private ArrayList<String> productImage;
-	private String productId;
 	private String productText;
 	private String productSize;
 	private String productComp;
