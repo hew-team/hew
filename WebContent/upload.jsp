@@ -51,16 +51,17 @@
 	
 	
 	<div id="dialog1">
-		<div id="drag-area1" style="width:100%;height:200px;border:dashed 1px #333;">
+		<div id="drag-area1" style="width:100%;height:80%;border:dashed 1px #333;">
 			<p>アップロードするファイルをドロップ</p>
 		</div>
 		<div id="fileNameArea1"></div>
 	</div>
 	<div id="dialog2">
-		<div id="drag-area2" style="width:100%;height:200px;border:dashed 1px #333;">
+		<div id="drag-area2" style="width:100%;height:80%;border:dashed 1px #333;">
 			<p>アップロードするファイルをドロップ</p>
 		</div>
 		<div id="fileNameArea2"></div>
+		<div id="imageArea"></div>
 	</div>
 	<script type="text/javascript">
 	$(function(){
@@ -68,6 +69,8 @@
 		var files = null;
 		// FormDataオブジェクトを用意
 		var fd = new FormData();
+		var x = 0;
+		var y = 0;
 		
 		$('document').ready(function(){
 			$('#button').click(function(e){
@@ -78,34 +81,41 @@
 					alert('入力項目を確認して下さい');
 				}
 			});
-				$('#dialog1').dialog({
-					  autoOpen: false,
-					  title: 'apk',
-					  closeOnEscape: false,
-					  modal: true,
-					  buttons: {
-					    "OK": function(){
-					      $(this).dialog('close');
-					    }
-					  }
-					});
-				$('#dialog2').dialog({
-					  autoOpen: false,
-					  title: 'icon',
-					  closeOnEscape: false,
-					  modal: true,
-					  buttons: {
-					    "OK": function(){
-					      $(this).dialog('close');
-					    }
-					  }
-					});
-				$('#apk').click(function(){
-					$('#dialog1').dialog('open');
+			
+			x = $(window).width() * 0.8;
+			y = $(window).height() * 0.8;
+			$('#dialog1').dialog({
+				  autoOpen: false,
+				  height: y,
+				  width: x,
+				  title: 'apk',
+				  closeOnEscape: false,
+				  modal: true,
+				  buttons: {
+				    "OK": function(){
+				      $(this).dialog('close');
+				    }
+				  }
 				});
-				$('#icon').click(function(){
-					$('#dialog2').dialog('open');
+			$('#dialog2').dialog({
+				  autoOpen: false,
+				  height: y,
+				  width: x,
+				  title: 'icon',
+				  closeOnEscape: false,
+				  modal: true,
+				  buttons: {
+				    "OK": function(){
+				      $(this).dialog('close');
+				    }
+				  }
 				});
+			$('#apk').click(function(){
+				$('#dialog1').dialog('open');
+			});
+			$('#icon').click(function(){
+				$('#dialog2').dialog('open');
+			});
 		});
 		
 		function checkName(){
@@ -135,6 +145,15 @@
 			else return false;
 		}
 		
+
+		$("#drag-area2").on("dragover",function(e){
+			e.preventDefault();
+			$('#dialog2').css('background-color', '#ccc');
+		});
+		$("#drag-area2").on("dragleave",function(e){
+			e.preventDefault();
+			$('#dialog2').css('background-color', '#fff');
+		});
 		/*================================================
 		  ファイルをドロップした時の処理
 		=================================================*/
@@ -165,6 +184,8 @@
 			// デフォルトの挙動を停止
 			return false;
 		});
+		
+		
 		$('#drag-area2').bind('drop', function(e){
 			// デフォルトの挙動を停止
 			e.preventDefault();
@@ -185,6 +206,40 @@
 				fd.append("files[]", files[i]);
 			}
 			console.log(fd);
+			
+			var file = event.dataTransfer.files[0];
+			// ファイルタイプ(MIME)で対応しているファイルか判定
+			if (!file.type.match(/image\/\w+/)) {
+			    alert('画像ファイル以外は利用できません');
+			    return;
+			}
+			
+			//ドラッグした画像を表示
+			var reader = new FileReader(); 
+			reader.onload = function() {
+			    var imageObject = $('<img>');
+			    imageObject.attr('width', '100px');
+			    imageObject.attr('src', reader.result);
+			    imageObject.attr('id', 'image');
+			    $('#drag-area2').append(imageObject);
+			    
+			    $('#image').on('dragleave', function(e){
+			    	e.preventDefault();
+			    	$('#image').on('drop',function(e){
+			    		
+			    	});
+			    });
+			};
+			reader.onerror = function(e) {
+			    var result = $('#result');
+			    result.html('');
+			    for (var key in reader.error) {
+			        result.append(key + '=' + reader.error[key] + '<br>');
+			    }
+			};
+			reader.readAsDataURL(file);
+			
+			
 			
 		}).bind('dragenter', function(){
 			// デフォルトの挙動を停止
