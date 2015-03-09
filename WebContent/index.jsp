@@ -5,7 +5,7 @@
 	request.setCharacterEncoding("utf-8");
 %>
 <jsp:include page="header.jsp">
-	<jsp:param value="検索結果" name="PageName" />
+	<jsp:param value="トップページ" name="PageName" />
 	<jsp:param value="index" name="Path" />
 </jsp:include>
 
@@ -19,11 +19,11 @@
             wSlide-0.7
             pag-{ type: bullet, align: center, pos: bottom } swipe-{ isBody: true }">
         
-            <a class="ct-img" href=""><img src="./images/img_demo_default1.png" width="940"></a>
-            <a class="ct-img" href=""><img src="./images/img_demo_default2.png" width="940"></a>
-            <a class="ct-img" href=""><img src="./images/img_demo_default3.png" width="940"></a>
-            <a class="ct-img" href=""><img src="./images/img_demo_default4.png" width="940"></a>
-            <a class="ct-img" href=""><img src="./images/img_demo_default5.png" width="940"></a>
+            <a class="ct-img" href=""><img src="./images/slider01.png" width="940"></a>
+            <a class="ct-img" href=""><img src="./images/slider02.png" width="940"></a>
+            <a class="ct-img" href=""><img src="./images/slider03.png" width="940"></a>
+            <a class="ct-img" href=""><img src="./images/slider04.png" width="940"></a>
+            <a class="ct-img" href=""><img src="./images/slider05.png" width="940"></a>
         </div>
         <!-- Slider center - end -->
 
