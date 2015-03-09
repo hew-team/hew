@@ -30,7 +30,7 @@ public class Download extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		//ダウンロードフォルダパス
-		final String FILEPATH = "/upload/";
+		final String FILEPATH = "/Users/ryuji-note/documents/JV23/workspace/hew/WebContent/upload/";
 
 		//メッセージ
 		final String DOWNLOADFAIL = "ダウンロードに失敗しました。";

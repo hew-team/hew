@@ -79,9 +79,14 @@ for(int i = 0 ; i < ret.size(); i++){
 		<img src="<%= "upload/" + pdb.getUserId() + "/" + pdb.getProductIcon() %>" width="60" height="60" alt="" />
 	</span>
 	<span class="txt"><%=pdb.getProductName() %><font><%=pdb.getProductText() %></font><font class="star">★★★</font></span>
-	<a href="#">
+	<form action="Download" method="post">
+		<input class="btn" type="submit" name="download" value="DownLoad">
+		<input type="hidden" name="userId" value="<%=pdb.getUserId() %>">
+		<input type="hidden" name="filename" value="<%=pdb.getProductFileName() %>">
+	</form>
+	<!-- <a>
 		<img src="images/icon-download-alt.png" width="20" alt="" />
-	</a>
+	</a> -->
 </li>
 <%
 }
@@ -184,5 +189,7 @@ function modal(pi){
 	</div>
 	<div id="fileNameArea1"></div>
 </div>
-
+<script>
+	$()
+</script>
 <jsp:include page="footer.jsp"></jsp:include>

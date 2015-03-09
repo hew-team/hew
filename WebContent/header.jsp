@@ -12,6 +12,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="./css/common.css" />
+	<link rel="stylesheet" type="text/css" href="./css/mypage.css" />
 <%
 if(request.getParameter("Path") != null){
 	%>
