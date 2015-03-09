@@ -273,6 +273,8 @@ public class DAO {
 					pdb.setProductId(rs.getString("product_id"));
 					pdb.setProductPoint(rs.getInt("product_point"));
 					pdb.setProductFileName(rs.getString("product_file"));
+					pdb.setProductIcon(rs.getString("product_icon"));
+					System.out.println(rs.getString("product_icon"));
 
 					ret.add(pdb);
 				}
@@ -306,7 +308,7 @@ public class DAO {
 					pdb.setAuthor(rs.getString("user_name"));
 					pdb.setProductPoint(rs.getInt("product_point"));
 					pdb.setProductFileName(rs.getString("product_file"));
-
+					pdb.setProductIcon(rs.getString("product_icon"));
 					ret.add(pdb);
 				}
 				
@@ -334,6 +336,7 @@ public class DAO {
 					pdb.setAuthor(rs.getString("user_name"));
 					pdb.setProductPoint(rs.getInt("product_point"));
 					pdb.setProductFileName(rs.getString("product_file"));
+					pdb.setProductIcon(rs.getString("product_icon"));
 					ret.add(pdb);
 				}
 				
@@ -363,6 +366,8 @@ public class DAO {
 					pdb.setAuthor(rs.getString("user_name"));
 					pdb.setProductPoint(rs.getInt("product_point"));
 					pdb.setProductFileName(rs.getString("product_file"));
+					pdb.setProductIcon(rs.getString("product_icon"));
+					System.out.println(rs.getString("product_icon"));
 					ret.add(pdb);
 				}
 				
@@ -452,7 +457,6 @@ public class DAO {
 				pdb.setAuthor(rs.getString("user_name"));
 				pdb.setCategory(rs.getString("category_name"));
 				pdb.setProductText(rs.getString("product_text"));
-				pdb.setProductIcon(rs.getString("product_icon"));
 				pdb.setProductPoint(rs.getInt("product_point"));
 				pdb.setProductFileName(rs.getString("product_file"));
 				pdb.setProductSize(rs.getString("product_size"));

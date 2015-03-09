@@ -52,7 +52,7 @@ public class UploadFileServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//(1)アップロードファイルを格納するPATHを取得
 		//String path = getServletContext().getRealPath("files");
-		String path = "/upload";
+		String path = "/Users/ryuji-note/Documents/JV23/workspace/hew/WebContent/upload/";
 		String msg = "";
 		String fileName = "";
 		int ret = 0;
@@ -72,8 +72,6 @@ public class UploadFileServlet extends HttpServlet {
 			String icon = "";
 
 			long size = 0;
-
-
 			//(2)ServletFileUploadオブジェクトを生成
 			DiskFileItemFactory factory = new DiskFileItemFactory();
 			ServletFileUpload upload = new ServletFileUpload(factory);

@@ -76,9 +76,9 @@ for(int i = 0 ; i < ret.size(); i++){
 %>
 <li class="clearfix">
 	<span class="img">
-		<img src="images/photo/01s.png" width="60" height="60" alt="" />
+		<img src="<%= "upload/" + pdb.getUserId() + "/" + pdb.getProductIcon() %>" width="60" height="60" alt="" />
 	</span>
-	<span class="txt">アイテムNo.1<font>楽曲：03:25 20MB</font><font class="star">★★★</font></span>
+	<span class="txt"><%=pdb.getProductName() %><font><%=pdb.getProductText() %></font><font class="star">★★★</font></span>
 	<a href="#">
 		<img src="images/icon-download-alt.png" width="20" alt="" />
 	</a>
@@ -93,9 +93,9 @@ for(int i = 0 ; i < ret.size(); i++){
 
 <div id="searchRe">
 	<p class="title">再検索</p>
-	<form action="#" method="post">
+	<form action="SearchServlet" method="post">
 	<table>
-		<tr><td class="left">キーワード：</td><td class="rightL"><input type="text" name="keyword" maxlength="30" value="あああああ" style="width:300px;"/></td>
+		<tr><td class="left">キーワード：</td><td class="rightL"><input type="text" name="keyword" maxlength="30" style="width:300px;"/></td>
 		    <td class="left">販売時期：</td>
 		    <td class="rightR">
 			<select name="year00">
@@ -129,7 +129,7 @@ for(int i = 0 ; i < ret.size(); i++){
 				<option value="03">03</option>
 			</select>日</td>
 		</tr>
-		<tr><td class="left">ユーザ名：</td><td class="rightL"><input type="text" name="userName" maxlength="30" value="あああああ" style="width:300px;"/></td>
+		<tr><td class="left">ユーザ名：</td><td class="rightL"><input type="text" name="text" maxlength="30" style="width:300px;"/></td>
 		    <td class="left">価格：</td>
 		    <td class="rightR">
 			<select name="pt00">
