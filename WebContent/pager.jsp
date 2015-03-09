@@ -4,12 +4,17 @@
 <%
 
 /*
-
+url			:	url
 page		:	ページ数
 ThisPage	:	現在参照中のページ
 PageContent	:	ページあたりの表示件数
-LastPage	:	最後のページ
-	
+LastPage	:	最後のページ	
+
+<jsp:include page="pager.jsp">
+	<jsp:param value="10" name="PageContent"/>
+</jsp:include>
+
+
 */
 
 final int MAX_PAGE_NUM = 9;
@@ -76,4 +81,3 @@ if(ThisPage == LastPage){
 }
 %>
 </div>
-    
